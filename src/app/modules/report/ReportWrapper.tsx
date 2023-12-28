@@ -1,7 +1,9 @@
 import React, {FC} from 'react'
 import {KTIcon} from "../../../_metronic/helpers";
+import {useNavigate} from "react-router-dom";
 
 const ReportPageWrapper: FC = () => {
+    const navigate = useNavigate()
     return (
         <>
             <div className='card-title justify-content-between d-flex' style={{marginBottom: '28px'}}>
@@ -11,7 +13,7 @@ const ReportPageWrapper: FC = () => {
                         Данные о ваших отчётах
                     </p>
                 </div>
-                <button type="button" className="btn btn-primary btn-sm my-auto" style={{height: '38px'}}>
+                <button onClick={() => navigate('/submit-report')} type="button" className="btn btn-primary btn-sm my-auto" style={{height: '38px'}}>
                     <KTIcon iconName="plus-square" className='fs-3 pr-4'/>
                     Сдать отчёт
                 </button>
@@ -82,7 +84,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>
@@ -104,7 +106,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>
@@ -126,7 +128,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>
@@ -148,7 +150,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>
@@ -170,7 +172,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>

@@ -7,7 +7,10 @@ import { MasterLayout } from '../../_metronic/layout/MasterLayout'
 import { ConsolePage } from '../modules/console/ConsolePage'
 import CoursesPage from '../modules/courses/CoursesPage'
 import InventoryPageWrapper from '../modules/inventory/InventoryPageWrapper.tsx'
+import ViewReport from '../modules/inventory/ViewReport.tsx'
 import ReportPageWrapper from '../modules/report/ReportWrapper.tsx'
+import SubmitReport from '../modules/report/SubmitReport.tsx'
+import TrainingPage from '../modules/training/TrainingPage.tsx'
 import { MenuTestPage } from '../pages/MenuTestPage'
 import { DashboardWrapper } from '../pages/dashboard/DashboardWrapper'
 import BuilderPageWrapper from '../pages/layout-builder/BuilderPageWrapper'
@@ -40,7 +43,14 @@ const PrivateRoutes = () => {
 						</SuspensedView>
 					}
 				/>
-
+				<Route
+					path='crafted/pages/profile/*'
+					element={
+						<SuspensedView>
+							<ProfilePage />
+						</SuspensedView>
+					}
+				/>
 				<Route
 					path='crafted/pages/courses/*'
 					element={
@@ -89,8 +99,14 @@ const PrivateRoutes = () => {
 						</SuspensedView>
 					}
 				/>
-				<Route path='report' element={<ReportPageWrapper />} />
-				<Route path='inventory' element={<InventoryPageWrapper />} />
+				<Route
+					path='training/*'
+					element={
+						<SuspensedView>
+							<TrainingPage />
+						</SuspensedView>
+					}
+				/>
 				<Route
 					path='profile'
 					element={
@@ -99,6 +115,10 @@ const PrivateRoutes = () => {
 						</SuspensedView>
 					}
 				/>
+				<Route path='report' element={<ReportPageWrapper />} />
+				<Route path='submit-report' element={<SubmitReport />} />
+				<Route path='view-report' element={<ViewReport />} />
+				<Route path='inventory' element={<InventoryPageWrapper />} />
 				{/* Page Not Found */}
 				<Route path='*' element={<Navigate to='/error/404' />} />
 			</Route>
