@@ -6,6 +6,7 @@ import { WithChildren } from '../../_metronic/helpers'
 import { MasterLayout } from '../../_metronic/layout/MasterLayout'
 import { ConsolePage } from '../modules/console/ConsolePage'
 import CoursesPage from '../modules/courses/CoursesPage'
+import CompetitionsPage from '../modules/competitions/CompetitionsPage'
 import InventoryPageWrapper from '../modules/inventory/InventoryPageWrapper.tsx'
 import ViewReport from '../modules/inventory/ViewReport.tsx'
 import ReportPageWrapper from '../modules/report/ReportWrapper.tsx'
@@ -51,6 +52,14 @@ const PrivateRoutes = () => {
 						</SuspensedView>
 					}
 				/>
+                <Route
+                    path="crafted/pages/competitions/*"
+                    element={
+                        <SuspensedView>
+                            <CompetitionsPage />
+                        </SuspensedView>
+                    }
+                />
 				<Route
 					path='crafted/pages/courses/*'
 					element={

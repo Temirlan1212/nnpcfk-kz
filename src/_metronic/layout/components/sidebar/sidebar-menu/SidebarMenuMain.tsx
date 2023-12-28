@@ -56,6 +56,11 @@ const SidebarMenuMain = () => {
 				/>
 			</SidebarMenuItemWithSub>
 
+
+            <SidebarMenuItemWithSub to="/crafted/pages/competitions" title="Соревнования" hasBullet={false}>
+                <SidebarMenuItem to="/crafted/pages/competitions/list" title="Список" hasBullet={true} />
+            </SidebarMenuItemWithSub>
+            
 			<SidebarMenuItem
 				to='/report'
 				icon='chart-simple'
