@@ -4,6 +4,7 @@ import TopBarProgress from 'react-topbar-progress-indicator'
 import { getCSSVariableValue } from '../../_metronic/assets/ts/_utils'
 import { WithChildren } from '../../_metronic/helpers'
 import { MasterLayout } from '../../_metronic/layout/MasterLayout'
+import CertificateWrapper from '../modules/certificate/CertificateWrapper.tsx'
 import { ConsolePage } from '../modules/console/ConsolePage'
 import CoursesPage from '../modules/courses/CoursesPage'
 import CompetitionsPage from '../modules/competitions/CompetitionsPage'
@@ -128,6 +129,8 @@ const PrivateRoutes = () => {
 				<Route path='submit-report' element={<SubmitReport />} />
 				<Route path='view-report' element={<ViewReport />} />
 				<Route path='inventory' element={<InventoryPageWrapper />} />
+				<Route path='certificate' element={<CertificateWrapper />} />
+
 				{/* Page Not Found */}
 				<Route path='*' element={<Navigate to='/error/404' />} />
 			</Route>

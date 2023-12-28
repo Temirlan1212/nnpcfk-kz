@@ -1,9 +1,9 @@
-import { useIntl } from 'react-intl'
+// import { useIntl } from 'react-intl'
 import { SidebarMenuItem } from './SidebarMenuItem'
 import { SidebarMenuItemWithSub } from './SidebarMenuItemWithSub'
 
 const SidebarMenuMain = () => {
-	const intl = useIntl()
+	// const intl = useIntl()
 
 	return (
 		<>
@@ -37,7 +37,30 @@ const SidebarMenuMain = () => {
 					hasBullet={true}
 				/>
 			</SidebarMenuItemWithSub>
+			<SidebarMenuItem
+				to='/report'
+				icon='chart-simple'
+				title='Мои отчёты'
+				fontIcon='bi-layers'
+			/>
+			<SidebarMenuItem
+				to='/inventory'
+				icon='briefcase'
+				title='Инвентарь'
+				fontIcon='bi-layers'
+			/>
 
+			<SidebarMenuItemWithSub
+				to='/crafted/pages/courses'
+				title='Курсы'
+				hasBullet={false}
+			>
+				<SidebarMenuItem
+					to='/crafted/pages/courses/list'
+					title='Список курсов'
+					hasBullet={true}
+				/>
+			</SidebarMenuItemWithSub>
 			<SidebarMenuItemWithSub
 				to='/training'
 				title='Тренировки'
@@ -55,22 +78,21 @@ const SidebarMenuMain = () => {
 					hasBullet={true}
 				/>
 			</SidebarMenuItemWithSub>
-
-
-            <SidebarMenuItemWithSub to="/crafted/pages/competitions" title="Соревнования" hasBullet={false}>
-                <SidebarMenuItem to="/crafted/pages/competitions/list" title="Список" hasBullet={true} />
-            </SidebarMenuItemWithSub>
-            
+			<SidebarMenuItemWithSub
+				to='/crafted/pages/competitions'
+				title='Соревнования'
+				hasBullet={false}
+			>
+				<SidebarMenuItem
+					to='/crafted/pages/competitions/list'
+					title='Список'
+					hasBullet={true}
+				/>
+			</SidebarMenuItemWithSub>
 			<SidebarMenuItem
-				to='/report'
-				icon='chart-simple'
-				title='Мои отчёты'
-				fontIcon='bi-layers'
-			/>
-			<SidebarMenuItem
-				to='/inventory'
+				to='certificate'
 				icon='briefcase'
-				title='Инвентарь'
+				title='Сертификаты'
 				fontIcon='bi-layers'
 			/>
 			<SidebarMenuItem
@@ -79,8 +101,6 @@ const SidebarMenuMain = () => {
 				title='Мой Профиль'
 				fontIcon='bi-layers'
 			/>
-
-
 			{/* <SidebarMenuItemWithSub to="/crafted/pages/wizards" title="Wizards" hasBullet={true}>
           <SidebarMenuItem to="/crafted/pages/wizards/horizontal" title="Horizontal" hasBullet={true} />
           <SidebarMenuItem to="/crafted/pages/wizards/vertical" title="Vertical" hasBullet={true} />
