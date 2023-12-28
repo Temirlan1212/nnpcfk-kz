@@ -78,6 +78,17 @@ const SidebarMenuMain = () => {
 					hasBullet={true}
 				/>
 			</SidebarMenuItemWithSub>
+			<SidebarMenuItemWithSub
+				to='/crafted/pages/competitions'
+				title='Соревнования'
+				hasBullet={false}
+			>
+				<SidebarMenuItem
+					to='/crafted/pages/competitions/list'
+					title='Список'
+					hasBullet={true}
+				/>
+			</SidebarMenuItemWithSub>
 			<SidebarMenuItem
 				to='certificate'
 				icon='briefcase'
