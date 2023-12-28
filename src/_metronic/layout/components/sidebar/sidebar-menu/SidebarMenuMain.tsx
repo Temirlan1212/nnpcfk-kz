@@ -22,6 +22,12 @@ const SidebarMenuMain = () => {
         <SidebarMenuItem to="/crafted/pages/courses/list" title="Список курсов" hasBullet={true} />
       </SidebarMenuItemWithSub>
         <SidebarMenuItem
+            to='/report'
+            icon='chart-simple'
+            title='Мои отчёты'
+            fontIcon='bi-layers'
+        />
+        <SidebarMenuItem
             to='/inventory'
             icon='briefcase'
             title='Инвентарь'
