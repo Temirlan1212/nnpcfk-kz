@@ -24,3 +24,19 @@ export const defaultAccount: IAccount = {
 	class: '5',
 	category: 'Футбол',
 }
+
+export const optionsCategory = [
+	{ value: 'football', label: 'Футбол' },
+	{ value: 'basketball', label: 'Баскетбол' },
+	{ value: 'golf', label: 'Гольф' },
+]
+export const optionsLanguages = [
+	{ value: 'en', label: 'English' },
+	{ value: 'ru', label: 'Русский' },
+	{ value: 'kz', label: 'Казак' },
+]
+export const optionsClass = [
+	{ value: '1', label: '1 класс' },
+	{ value: '2', label: '2 класс' },
+	{ value: '3', label: '3 класс' },
+]
