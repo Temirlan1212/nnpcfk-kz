@@ -13,6 +13,7 @@ import InventoryPageWrapper from "../modules/inventory/InventoryPageWrapper.tsx"
 import ReportPageWrapper from "../modules/report/ReportWrapper.tsx";
 import SubmitReport from "../modules/report/SubmitReport.tsx";
 import ViewReport from "../modules/inventory/ViewReport.tsx";
+import TrainingPage from "../modules/training/TrainingPage.tsx";
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import("../modules/profile/ProfilePage"));
@@ -96,6 +97,14 @@ const PrivateRoutes = () => {
             </SuspensedView>
           }
         />
+          <Route
+              path="training/*"
+              element={
+                  <SuspensedView>
+                      <TrainingPage />
+                  </SuspensedView>
+              }
+          />
           <Route path='report' element={<ReportPageWrapper />} />
           <Route path='submit-report' element={<SubmitReport />} />
           <Route path='view-report' element={<ViewReport />} />
