@@ -186,7 +186,7 @@ const TablesWidget14: React.FC<Props> = ({ className }) => {
                             <tr className="fw-bold text-muted">
                                 <th className="min-w-60px">Дата</th>
                                 <th className="min-w-60px">Классы</th>
-                                <th className="min-w-150px text-center">Команда</th>
+                                <th className="min-w-150px text-center" colSpan={3}>Команда</th>
                                 <th className="min-w-120px">Этап</th>
                                 <th className="min-w-100px text-center">Статус</th>
                             </tr>
@@ -209,20 +209,36 @@ const TablesWidget14: React.FC<Props> = ({ className }) => {
                                         </a>
                                     </td>
                                     <td>
-                                        <div className="d-flex w-100 justify-content-center">
+                                        <div className="d-flex w-100 justify-content-end">
                                             <div className="d-flex flex-stack mb-2">
                                                 <div className="text-muted me-2 fs-6 fw-bold">
                                                     {competition.firstTeam}
                                                 </div>
+                                            </div>
+                                            <div className="d-flex flex-stack mb-2">
                                                 <div className="symbol symbol-45px me-5">
                                                     <img className="w-35 h-35" src={toAbsoluteUrl(competition.firstTeamImg)} alt="Team" />
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div className="d-flex w-100 justify-content-center">
+                                            <div className="d-flex flex-stack mb-2">
                                                 <div className="fs-6 fw-bold">
                                                     {competition.firstTeamPoint} - {competition.secondTeamPoint}
                                                 </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div className="d-flex w-100 justify-content-start">
+                                            <div className="d-flex flex-stack mb-2">
                                                 <div className="symbol symbol-45px me-5">
                                                     <img style={{ width: "35px", height: "35px" }} className="w-35 h-35" src={toAbsoluteUrl(competition.secondTeamImg)} alt="Team" />
                                                 </div>
+                                            </div>
+                                            <div className="d-flex flex-stack mb-2">
                                                 <div className="text-muted me-2 fs-6 fw-bold">
                                                     {competition.secondTeam}
                                                 </div>
