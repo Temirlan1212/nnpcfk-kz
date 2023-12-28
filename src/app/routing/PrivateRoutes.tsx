@@ -12,6 +12,7 @@ import { ConsolePage } from "../modules/console/ConsolePage";
 import InventoryPageWrapper from "../modules/inventory/InventoryPageWrapper.tsx";
 import ReportPageWrapper from "../modules/report/ReportWrapper.tsx";
 import SubmitReport from "../modules/report/SubmitReport.tsx";
+import ViewReport from "../modules/inventory/ViewReport.tsx";
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import("../modules/profile/ProfilePage"));
@@ -97,6 +98,7 @@ const PrivateRoutes = () => {
         />
           <Route path='report' element={<ReportPageWrapper />} />
           <Route path='submit-report' element={<SubmitReport />} />
+          <Route path='view-report' element={<ViewReport />} />
           <Route path='inventory' element={<InventoryPageWrapper />} />
         {/* Page Not Found */}
         <Route path="*" element={<Navigate to="/error/404" />} />

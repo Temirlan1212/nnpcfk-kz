@@ -84,7 +84,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>
@@ -106,7 +106,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>
@@ -128,7 +128,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>
@@ -150,7 +150,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>
@@ -172,7 +172,7 @@ const ReportPageWrapper: FC = () => {
                                     </div>
                                 </td>
                                 <td className="text-end">
-                                    <button type="button" className="btn btn-secondary me-3 btn-sm btn-flex">
+                                    <button type="button"  onClick={() => navigate('/view-report')} className="btn btn-secondary me-3 btn-sm btn-flex">
                                         Посмотреть
                                     </button>
                                 </td>
