@@ -1,9 +1,9 @@
-import { useIntl } from 'react-intl'
+// import { useIntl } from 'react-intl'
 import { SidebarMenuItem } from './SidebarMenuItem'
 import { SidebarMenuItemWithSub } from './SidebarMenuItemWithSub'
 
 const SidebarMenuMain = () => {
-	const intl = useIntl()
+	// const intl = useIntl()
 
 	return (
 		<>
@@ -49,12 +49,7 @@ const SidebarMenuMain = () => {
 				title='Инвентарь'
 				fontIcon='bi-layers'
 			/>
-			<SidebarMenuItem
-				to='/profile'
-				icon='profile-circle'
-				title='Мой Профиль'
-				fontIcon='bi-layers'
-			/>
+
 			<SidebarMenuItemWithSub
 				to='/crafted/pages/courses'
 				title='Курсы'
@@ -83,7 +78,18 @@ const SidebarMenuMain = () => {
 					hasBullet={true}
 				/>
 			</SidebarMenuItemWithSub>
-
+			<SidebarMenuItem
+				to='certificate'
+				icon='briefcase'
+				title='Сертификаты'
+				fontIcon='bi-layers'
+			/>
+			<SidebarMenuItem
+				to='/profile'
+				icon='profile-circle'
+				title='Мой Профиль'
+				fontIcon='bi-layers'
+			/>
 			{/* <SidebarMenuItemWithSub to="/crafted/pages/wizards" title="Wizards" hasBullet={true}>
           <SidebarMenuItem to="/crafted/pages/wizards/horizontal" title="Horizontal" hasBullet={true} />
           <SidebarMenuItem to="/crafted/pages/wizards/vertical" title="Vertical" hasBullet={true} />
