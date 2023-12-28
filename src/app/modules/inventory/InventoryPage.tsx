@@ -1,4 +1,5 @@
 import React, {FC} from 'react'
+import {KTIcon} from "../../../_metronic/helpers";
 
 const InventoryPage: FC = () => {
     return (
@@ -64,9 +65,8 @@ const InventoryPage: FC = () => {
                         <div className="col-lg-8 fv-row"><select
                             className="form-select form-select-solid form-select-lg" name="type">
                             <option value="">Основная</option>
-                            <option value="1">Afghanistan</option>
-                            <option value="2">Aland Islands</option>
-                            <option value="3">Albania</option>
+                            <option value="1">Малогабаритная</option>
+
                         </select></div>
                     </div>
                 </div>
@@ -79,9 +79,7 @@ const InventoryPage: FC = () => {
                         <div className="col-lg-8 fv-row"><select
                             className="form-select form-select-solid form-select-lg" name="type">
                             <option value="">Стандартный</option>
-                            <option value="1">Afghanistan</option>
-                            <option value="2">Aland Islands</option>
-                            <option value="3">Albania</option>
+                            <option value="1">Приспособленный</option>
                         </select></div>
                     </div>
                     <div className="row mb-6">
@@ -95,7 +93,7 @@ const InventoryPage: FC = () => {
                         </div>
                     </div>
                     <div className="row mb-6">
-                        <label className="col-lg-4 col-form-label required fw-bold fs-6">Пропускная способность</label>
+                        <label className="col-lg-4 col-form-label fw-bold fs-6 align-items-center required d-flex gap-2">Пропускная способность<KTIcon iconName='information-5' className='fs-2'/></label>
                         <div className="col-lg-8 fv-row">
                             <input type="text"
                                    className="form-control form-control-lg form-control-solid"
@@ -110,7 +108,7 @@ const InventoryPage: FC = () => {
                 <div className='card-body border-top p-9'>
                     <h3 className='fw-bolder fs-5 m-0 mb-5'>Тренажерный зал</h3>
                     <div className="row mb-6">
-                        <label className="col-lg-4 col-form-label required fw-bold fs-6">Количество</label>
+                        <label className="col-lg-4 col-form-label fw-bold fs-6 align-items-center d-flex gap-2">Количество{" "}<KTIcon iconName='information-5' className='fs-2'/></label>
                         <div className="col-lg-8 fv-row">
                             <input type="text"
                                    className="form-control form-control-lg form-control-solid"
@@ -135,7 +133,7 @@ const InventoryPage: FC = () => {
                 <div className='card-body border-top p-9'>
                     <h3 className='fw-bolder fs-5 m-0 mb-5'>Бассейн</h3>
                     <div className="row mb-6">
-                        <label className="col-lg-4 col-form-label required fw-bold fs-6">Дорожка, м</label>
+                        <label className="col-lg-4 col-form-label fw-bold fs-6 align-items-center d-flex gap-2">Дорожка, м<KTIcon iconName='information-5' className='fs-2'/></label>
                         <div className="col-lg-8 fv-row">
                             <input type="text"
                                    className="form-control form-control-lg form-control-solid"
@@ -184,9 +182,6 @@ const InventoryPage: FC = () => {
                         <div className="col-lg-8 fv-row"><select
                             className="form-select form-select-solid form-select-lg" name="type">
                             <option value="">Резиновое</option>
-                            <option value="1">Afghanistan</option>
-                            <option value="2">Aland Islands</option>
-                            <option value="3">Albania</option>
                         </select></div>
                     </div>
 
@@ -216,9 +211,8 @@ const InventoryPage: FC = () => {
                                     <select
                                         className="form-select form-select-solid form-select-lg" name="type">
                                         <option value="">50,2</option>
-                                        <option value="1">Afghanistan</option>
-                                        <option value="2">Aland Islands</option>
-                                        <option value="3">Albania</option>
+                                        <option value="1">48,4</option>
+                                        <option value="2">40,8</option>
                                     </select>
                                 </div>
                             </div>
@@ -243,9 +237,8 @@ const InventoryPage: FC = () => {
                                     <select
                                         className="form-select form-select-solid form-select-lg" name="type">
                                         <option value="">50,2</option>
-                                        <option value="1">Afghanistan</option>
-                                        <option value="2">Aland Islands</option>
-                                        <option value="3">Albania</option>
+                                        <option value="1">48,4</option>
+                                        <option value="2">40,8</option>
                                     </select>
                                 </div>
                             </div>
@@ -269,11 +262,11 @@ const InventoryPage: FC = () => {
                                     <span className="card-label fw-bold fs-3 mb-1">Преподаватели школы</span></h3>
                             </div>
                             <div className='d-flex gap-4 align-items-center'>
-                                <button type="button" className="btn btn-secondary btn-sm"
-                                        style={{height: '43.59px'}}>Экспорт из Excel
-                                </button>
+                                {/*<button type="button" className="btn btn-secondary btn-sm"*/}
+                                {/*        style={{height: '43.59px'}}>Экспорт из Excel*/}
+                                {/*</button>*/}
 
-                                <div className="d-flex align-items-center position-relative my-1">
+                                <div  className="d-flex align-items-center position-relative my-1">
                                     <i className="ki-duotone ki-magnifier fs-1 position-absolute ms-6">
                                     <span className="path1">
                                 </span>
@@ -282,9 +275,15 @@ const InventoryPage: FC = () => {
                                     </i>
                                     <input type="text"
                                            data-kt-user-table-filter="search"
-                                           className="form-control form-control-solid w-250px ps-14"
+                                           className="form-control form-control-fluid w-350px ps-16"
                                            placeholder="Добавить преподавателя"
                                            value=""/>
+                                    <div
+                                        className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
+                                        data-kt-menu="true">
+                                        <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                        <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
+                                    </div>
                                 </div>
 
 
@@ -328,43 +327,8 @@ const InventoryPage: FC = () => {
                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -391,46 +355,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -457,46 +386,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -523,46 +417,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -589,46 +448,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -666,10 +490,6 @@ const InventoryPage: FC = () => {
                                     <span className="card-label fw-bold fs-3 mb-1">Преподаватели школы</span></h3>
                             </div>
                             <div className='d-flex gap-4 align-items-center'>
-
-                                <button type="button" className="btn btn-secondary btn-sm"
-                                        style={{height: '43.59px'}}>Экспорт из Excel
-                                </button>
                                 <button type="button" className="btn btn-primary btn-sm"
                                         style={{height: '43.59px'}}>Добавить секцию
                                 </button>
@@ -711,46 +531,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -777,46 +562,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -843,46 +593,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -909,46 +624,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -975,46 +655,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -1176,10 +821,6 @@ const InventoryPage: FC = () => {
                                     <span className="card-label fw-bold fs-3 mb-1">Учащиеся школы</span></h3>
                             </div>
                             <div className='d-flex gap-4 align-items-center'>
-
-                                <button type="button" className="btn btn-secondary btn-sm"
-                                        style={{height: '43.59px'}}>Экспорт из Excel
-                                </button>
                                 <button type="button" className="btn btn-primary btn-sm"
                                         style={{height: '43.59px'}}>Добавить секцию
                                 </button>
@@ -1227,46 +868,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -1296,46 +902,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -1365,46 +936,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
@@ -1434,46 +970,11 @@ const InventoryPage: FC = () => {
                                                     data-kt-menu-flip="top-end"><p
                                                 className='text-gray-600 fw-bold fs-6 m-0 p-0'>Действия</p>
                                             </button>
-                                            <div
+                                             <div
                                                 className="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-200px"
                                                 data-kt-menu="true">
-                                                <div className="menu-item px-3">
-                                                    <div
-                                                        className="menu-content fs-6 text-gray-900 fw-bold px-3 py-4">Quick
-                                                        Actions
-                                                    </div>
-                                                </div>
-                                                <div className="separator mb-3 opacity-75"></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Ticket</a></div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Customer</a></div>
-                                                <div className="menu-item px-3" data-kt-menu-trigger="hover"
-                                                     data-kt-menu-placement="right-start"
-                                                     data-kt-menu-flip="left-start, top"><a
-                                                    href="#" className="menu-link px-3"><span
-                                                    className="menu-title">New Group</span><span
-                                                    className="menu-arrow"></span></a>
-                                                    <div className="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Admin
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Staff
-                                                            Group</a></div>
-                                                        <div className="menu-item px-3"><a href="#"
-                                                                                           className="menu-link px-3">Member
-                                                            Group</a></div>
-                                                    </div>
-                                                </div>
-                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">New
-                                                    Contact</a></div>
-                                                <div className="separator mt-3 opacity-75"></div>
-                                                <div className="menu-item px-3">
-                                                    <div className="menu-content px-3 py-3"><a
-                                                        className="btn btn-primary btn-sm px-4" href="#">Generate
-                                                        Reports</a></div>
-                                                </div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Изменить</a></div>
+                                                <div className="menu-item px-3"><a href="#" className="menu-link px-3">Удалить</a></div>
                                             </div>
                                         </td>
 
