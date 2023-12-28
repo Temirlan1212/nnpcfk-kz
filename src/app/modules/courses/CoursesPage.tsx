@@ -1,5 +1,4 @@
-import { PageTitle } from "../../../_metronic/layout/components/toolbar/page-title/PageTitle";
-import { PageLink } from "../../../_metronic/layout/core";
+import { PageLink, PageTitle } from "../../../_metronic/layout/core";
 import { Routes, Route, Outlet } from "react-router-dom";
 import { Courses } from "./components/Courses";
 

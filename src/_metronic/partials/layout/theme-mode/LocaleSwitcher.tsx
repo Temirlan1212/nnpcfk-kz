@@ -35,7 +35,7 @@ const LocaleSwitcher = ({
       >
         {/* begin::Menu item */}
         <div className="menu-item px-3 my-0">
-          <a href="#" className={clsx("menu-link px-3 py-2")} onClick={() => switchMode("light")}>
+          <a href="#" className={clsx("menu-link px-3 py-2")}>
             <span className="menu-title">Русский</span>
           </a>
         </div>
@@ -43,7 +43,7 @@ const LocaleSwitcher = ({
 
         {/* begin::Menu item */}
         <div className="menu-item px-3 my-0">
-          <a href="#" className={clsx("menu-link px-3 py-2")} onClick={() => switchMode("dark")}>
+          <a href="#" className={clsx("menu-link px-3 py-2")}>
             <span className="menu-title">Казахский</span>
           </a>
         </div>

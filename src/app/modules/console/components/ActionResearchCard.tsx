@@ -1,6 +1,5 @@
 import { toAbsoluteUrl } from "../../../../_metronic/helpers";
 import { CardsWidget20, ListsWidget3 } from "../../../../_metronic/partials/widgets";
-import { PageLink, PageTitle } from "../../../_metronic/layout/core";
 
 export function ActionReseearchCard() {
   return (
