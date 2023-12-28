@@ -1,25 +1,26 @@
 export interface IAccount {
-  username: string
-  email: string
-  language: string
-  timeZone: string
-  communications: {
-    email: boolean
-    sms: boolean
-    phone: boolean
-  }
-  requireInfo: boolean
+	firstName: string
+	lastName: string
+	school: string
+	phone: string
+	cities: string
+	language: string
+	staj: string
+	level: string
+	class: string
+	category: string
 }
 
 export const defaultAccount: IAccount = {
-  username: 'max_stone',
-  email: 'nick.watson@loop.com',
-  language: 'en',
-  timeZone: 'Alaska',
-  communications: {
-    email: false,
-    sms: true,
-    phone: false,
-  },
-  requireInfo: false,
+	firstName: 'Батырхан',
+	lastName: 'Омирбеков',
+	cities: '',
+	phone: '+7 777 777 7777',
+	school: 'ТОО “Спортивные дети”',
+	language: 'en',
+
+	staj: '1',
+	level: 'pedagog',
+	class: '5',
+	category: 'Футбол',
 }
