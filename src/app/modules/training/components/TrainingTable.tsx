@@ -8,7 +8,8 @@ export function TrainingTable() {
             <div className="card-header border-0 pt-5"><h3 className="card-title align-items-start flex-column">
                 <span className="card-label fw-bold fs-3 mb-1">Тренировки</span><span
                 className="text-muted mt-1 fw-semibold fs-7">Список проведенных вами тренировок</span></h3>
-                <div onClick={() => navigate('/training/add-training')} className="card-toolbar"><a href="#" className="btn btn-sm btn-light-primary"><i
+                <div onClick={() => navigate('/training/add-training')} className="card-toolbar"><a href="#"
+                                                                                                    className="btn btn-sm btn-light-primary"><i
                     className="ki-duotone ki-plus fs-2"></i>Добавить тренировку</a></div>
             </div>
             <div className="card-body py-3">
@@ -28,7 +29,7 @@ export function TrainingTable() {
                             <td>
                                 <div className="d-flex align-items-center">
                                     <div className="symbol symbol-50px me-5"><img
-                                        src="/metronic8/react/demo1//media/training-img/football.png"
+                                        src="/public/media/training-img/football.png"
                                         className="object-fit-cover"
                                         alt=""/></div>
                                 </div>
@@ -64,7 +65,7 @@ export function TrainingTable() {
                             <td>
                                 <div className="d-flex align-items-center">
                                     <div className="symbol symbol-50px me-5"><img
-                                        src="/metronic8/react/demo1//media/training-img/football.png"
+                                        src="/public/media/training-img/football.png"
                                         className="object-fit-cover"
                                         alt=""/></div>
                                 </div>
@@ -100,7 +101,7 @@ export function TrainingTable() {
                             <td>
                                 <div className="d-flex align-items-center">
                                     <div className="symbol symbol-50px me-5"><img
-                                        src="/metronic8/react/demo1//media/training-img/football.png"
+                                        src="/public/media/training-img/football.png"
                                         className="object-fit-cover"
                                         alt=""/></div>
                                 </div>
@@ -136,7 +137,7 @@ export function TrainingTable() {
                             <td>
                                 <div className="d-flex align-items-center">
                                     <div className="symbol symbol-50px me-5"><img
-                                        src="/metronic8/react/demo1//media/training-img/running.png"
+                                        src="/public/media/training-img/running.png"
                                         className="object-fit-cover"
                                         alt=""/></div>
                                 </div>
@@ -170,10 +171,11 @@ export function TrainingTable() {
                         <tr>
                             <td>
                                 <div className="d-flex align-items-center">
-                                    <div className="symbol symbol-50px me-5"><img
-                                        src="/metronic8/react/demo1//media/training-img/basketball.png"
-                                        className="object-fit-cover"
-                                        alt=""/></div>
+                                    <div className="symbol symbol-50px me-5">
+                                        <img
+                                            src="/public/media/training-img/basketball.png"
+                                            className="object-fit-cover"
+                                            alt=""/></div>
                                 </div>
                             </td>
                             <td>
