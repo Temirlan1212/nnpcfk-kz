@@ -21,6 +21,9 @@ const SidebarMenuMain = () => {
       <SidebarMenuItemWithSub to="/crafted/pages/courses" title="Курсы" hasBullet={false}>
         <SidebarMenuItem to="/crafted/pages/courses/list" title="Список курсов" hasBullet={true} />
       </SidebarMenuItemWithSub>
+      <SidebarMenuItemWithSub to="/crafted/pages/competitions" title="Соревнования" hasBullet={false}>
+        <SidebarMenuItem to="/crafted/pages/competitions/list" title="Список" hasBullet={true} />
+      </SidebarMenuItemWithSub>
         <SidebarMenuItem
             to='/inventory'
             icon='briefcase'

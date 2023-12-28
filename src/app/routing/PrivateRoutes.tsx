@@ -10,6 +10,7 @@ import BuilderPageWrapper from "../pages/layout-builder/BuilderPageWrapper";
 import CoursesPage from "../modules/courses/CoursesPage";
 import { ConsolePage } from "../modules/console/ConsolePage";
 import InventoryPageWrapper from "../modules/inventory/InventoryPageWrapper.tsx";
+import CompetitionsPage from "../modules/competitions/CompetitionsPage.tsx";
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import("../modules/profile/ProfilePage"));
@@ -50,6 +51,14 @@ const PrivateRoutes = () => {
           element={
             <SuspensedView>
               <CoursesPage />
+            </SuspensedView>
+          }
+        />
+        <Route
+          path="crafted/pages/competitions/*"
+          element={
+            <SuspensedView>
+              <CompetitionsPage />
             </SuspensedView>
           }
         />
