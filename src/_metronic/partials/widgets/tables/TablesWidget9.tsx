@@ -1,406 +1,179 @@
-
-import React from 'react'
-import {KTIcon, toAbsoluteUrl} from '../../../helpers'
+import React from "react";
+import { KTIcon, toAbsoluteUrl } from "../../../helpers";
 
 type Props = {
-  className: string
-}
+  className: string;
+};
 
-const TablesWidget9: React.FC<Props> = ({className}) => {
+type Course = {
+  id: number;
+  name: string;
+  avatarSrc: string;
+  skills: string;
+  date: string;
+  progress: number;
+  format: string;
+};
+
+const TablesWidget9: React.FC<Props> = ({ className }) => {
+  // Sample courses data
+  const courses: Course[] = [
+    {
+      id: 1,
+      name: "Инновационные методики в обучении",
+      avatarSrc: "media/avatars/300-14.jpg",
+      skills: "HTML, JS, ReactJS",
+      date: "Янв 20, 2023",
+      progress: 50,
+      format: "Онлайн",
+    },
+    {
+      id: 2,
+      name: "Jessie Clarcson",
+      avatarSrc: "media/avatars/300-2.jpg",
+      skills: "C#, ASP.NET, MS SQL",
+      date: "Agoda",
+      progress: 70,
+      format: "Онлайн",
+    },
+    {
+      id: 3,
+      name: "Lebron Wayde",
+      avatarSrc: "media/avatars/300-5.jpg",
+      skills: "PHP, Laravel, VueJS",
+      date: "RoadGee",
+      progress: 60,
+      format: "Онлайн",
+    },
+    {
+      id: 4,
+      name: "Natali Goodwin",
+      avatarSrc: "media/avatars/300-20.jpg",
+      skills: "Python, PostgreSQL, ReactJS",
+      date: "The Hill",
+      progress: 50,
+      format: "Онлайн",
+    },
+    {
+      id: 5,
+      name: "Kevin Leonard",
+      avatarSrc: "media/avatars/300-23.jpg",
+      skills: "HTML, JS, ReactJS",
+      date: "RoadGee",
+      progress: 90,
+      format: "Онлайн",
+    },
+    // Add more course objects as needed
+  ];
+
+  const getColor = (percent: number) => {
+    if (percent < 10) {
+      return "bg-light";
+    }
+    if (percent < 30) {
+      return "bg-secondary";
+    }
+    if (percent < 60) {
+      return "bg-primary";
+    }
+    if (percent < 80) {
+      return "bg-warning";
+    } else {
+      return "bg-success";
+    }
+  };
+
+  const getBadgeColor = (percent: number) => {
+    if (percent < 10) {
+      return "badge-light";
+    }
+    if (percent < 30) {
+      return "badge-light-secondary";
+    }
+    if (percent < 60) {
+      return "badge-light-primary";
+    }
+    if (percent < 80) {
+      return "badge-light-warning";
+    } else {
+      return "badge-light-success";
+    }
+  };
+
   return (
     <div className={`card ${className}`}>
-      {/* begin::Header */}
-      <div className='card-header border-0 pt-5'>
-        <h3 className='card-title align-items-start flex-column'>
-          <span className='card-label fw-bold fs-3 mb-1'>Members Statistics</span>
-          <span className='text-muted mt-1 fw-semibold fs-7'>Over 500 members</span>
-        </h3>
-        <div
-          className='card-toolbar'
-          data-bs-toggle='tooltip'
-          data-bs-placement='top'
-          data-bs-trigger='hover'
-          title='Click to add a user'
-        >
-          <a
-            href='#'
-            className='btn btn-sm btn-light-primary'
-            data-bs-toggle='modal'
-            data-bs-target='#kt_modal_invite_friends'
-          >
-            <KTIcon iconName='plus' className='fs-3' />
-            New Member
-          </a>
-        </div>
-      </div>
-      {/* end::Header */}
-      {/* begin::Body */}
-      <div className='card-body py-3'>
-        {/* begin::Table container */}
-        <div className='table-responsive'>
-          {/* begin::Table */}
-          <table className='table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4'>
-            {/* begin::Table head */}
+      {/* ... Other parts of the component */}
+      <div className="card-body py-3">
+        <div className="table-responsive">
+          <table className="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
             <thead>
-              <tr className='fw-bold text-muted'>
-                <th className='w-25px'>
-                  <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input
-                      className='form-check-input'
-                      type='checkbox'
-                      value='1'
-                      data-kt-check='true'
-                      data-kt-check-target='.widget-9-check'
-                    />
+              <tr className="fw-bold text-muted">
+                <th className="w-25px">
+                  <div className="form-check form-check-sm form-check-custom form-check-solid">
+                    <input className="form-check-input" type="checkbox" value="1" data-kt-check="true" data-kt-check-target=".widget-9-check" />
                   </div>
                 </th>
-                <th className='min-w-150px'>Authors</th>
-                <th className='min-w-140px'>Company</th>
-                <th className='min-w-120px'>Progress</th>
-                <th className='min-w-100px text-end'>Actions</th>
+                <th className="min-w-150px">Наименование</th>
+                <th className="min-w-140px">Дата проведения</th>
+                <th className="min-w-120px">Пройдено</th>
+                <th className="min-w-100px text-end">Формат</th>
+                <th className="min-w-100px text-end">О курсе</th>
               </tr>
             </thead>
-            {/* end::Table head */}
-            {/* begin::Table body */}
             <tbody>
-              <tr>
-                <td>
-                  <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-9-check' type='checkbox' value='1' />
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex align-items-center'>
-                    <div className='symbol symbol-45px me-5'>
-                      <img src={toAbsoluteUrl('media/avatars/300-14.jpg')} alt='' />
+              {courses.map((course) => (
+                <tr key={course.id}>
+                  <td>
+                    <div className="form-check form-check-sm form-check-custom form-check-solid">
+                      <input className="form-check-input widget-9-check" type="checkbox" value="1" />
                     </div>
-                    <div className='d-flex justify-content-start flex-column'>
-                      <a href='#' className='text-gray-900 fw-bold text-hover-primary fs-6'>
-                        Ana Simmons
-                      </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                        HTML, JS, ReactJS
-                      </span>
+                  </td>
+                  <td>
+                    <div className="d-flex align-items-center">
+                      <div className="symbol symbol-45px me-5">
+                        <img src={toAbsoluteUrl(course.avatarSrc)} alt="" />
+                      </div>
+                      <div className="d-flex justify-content-start flex-column">
+                        <a href="#" className="text-gray-900 fw-bold text-hover-primary fs-6">
+                          {course.name}
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </td>
-                <td>
-                  <a href='#' className='text-gray-900 fw-bold text-hover-primary d-block fs-6'>
-                    Intertico
-                  </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                    Web, UI/UX Design
-                  </span>
-                </td>
-                <td className='text-end'>
-                  <div className='d-flex flex-column w-100 me-2'>
-                    <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>50%</span>
-                    </div>
-                    <div className='progress h-6px w-100'>
-                      <div
-                        className='progress-bar bg-primary'
-                        role='progressbar'
-                        style={{width: '50%'}}
-                      ></div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex justify-content-end flex-shrink-0'>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='switch' className='fs-3' />
+                  </td>
+                  <td>
+                    <a href="#" className="text-gray-900 fw-bold text-hover-primary d-block fs-6">
+                      {course.date}
                     </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='pencil' className='fs-3' />
+                  </td>
+                  <td className="text-end">
+                    <div className="d-flex flex-column w-100 me-2">
+                      <div className="d-flex flex-stack mb-2">
+                        <span className="text-muted me-2 fs-7 fw-semibold">{course.progress}</span>
+                      </div>
+                      <div className="progress h-6px">
+                        <div className={`progress-bar ${getColor(course.progress)}`} role="progressbar" style={{ width: course.progress }}></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td className="text-end">
+                    <div className="min-w-125px pe-2">
+                      <span className={`badge ${getBadgeColor(course.progress)}`}> {course.format}</span>
+                    </div>
+                  </td>
+                  <td className="text-end">
+                    <a href="#" className="btn btn-secondary fw-bold text-hover-primary d-block fs-6">
+                      Смотреть
                     </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
-                    >
-                      <KTIcon iconName='trash' className='fs-3' />
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-9-check' type='checkbox' value='1' />
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex align-items-center'>
-                    <div className='symbol symbol-45px me-5'>
-                      <img src={toAbsoluteUrl('media/avatars/300-2.jpg')} alt='' />
-                    </div>
-                    <div className='d-flex justify-content-start flex-column'>
-                      <a href='#' className='text-gray-900 fw-bold text-hover-primary fs-6'>
-                        Jessie Clarcson
-                      </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                        C#, ASP.NET, MS SQL
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <a href='#' className='text-gray-900 fw-bold text-hover-primary d-block fs-6'>
-                    Agoda
-                  </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                    Houses &amp; Hotels
-                  </span>
-                </td>
-                <td className='text-end'>
-                  <div className='d-flex flex-column w-100 me-2'>
-                    <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>70%</span>
-                    </div>
-                    <div className='progress h-6px w-100'>
-                      <div
-                        className='progress-bar bg-danger'
-                        role='progressbar'
-                        style={{width: '70%'}}
-                      ></div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex justify-content-end flex-shrink-0'>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='switch' className='fs-3' />
-                    </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='pencil' className='fs-3' />
-                    </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
-                    >
-                      <KTIcon iconName='trash' className='fs-3' />
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-9-check' type='checkbox' value='1' />
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex align-items-center'>
-                    <div className='symbol symbol-45px me-5'>
-                      <img src={toAbsoluteUrl('media/avatars/300-5.jpg')} alt='' />
-                    </div>
-                    <div className='d-flex justify-content-start flex-column'>
-                      <a href='#' className='text-gray-900 fw-bold text-hover-primary fs-6'>
-                        Lebron Wayde
-                      </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                        PHP, Laravel, VueJS
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <a href='#' className='text-gray-900 fw-bold text-hover-primary d-block fs-6'>
-                    RoadGee
-                  </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                    Transportation
-                  </span>
-                </td>
-                <td className='text-end'>
-                  <div className='d-flex flex-column w-100 me-2'>
-                    <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>60%</span>
-                    </div>
-                    <div className='progress h-6px w-100'>
-                      <div
-                        className='progress-bar bg-success'
-                        role='progressbar'
-                        style={{width: '60%'}}
-                      ></div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex justify-content-end flex-shrink-0'>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='switch' className='fs-3' />
-                    </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='pencil' className='fs-3' />
-                    </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
-                    >
-                      <KTIcon iconName='trash' className='fs-3' />
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-9-check' type='checkbox' value='1' />
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex align-items-center'>
-                    <div className='symbol symbol-45px me-5'>
-                      <img src={toAbsoluteUrl('media/avatars/300-20.jpg')} alt='' />
-                    </div>
-                    <div className='d-flex justify-content-start flex-column'>
-                      <a href='#' className='text-gray-900 fw-bold text-hover-primary fs-6'>
-                        Natali Goodwin
-                      </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                        Python, PostgreSQL, ReactJS
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <a href='#' className='text-gray-900 fw-bold text-hover-primary d-block fs-6'>
-                    The Hill
-                  </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>Insurance</span>
-                </td>
-                <td className='text-end'>
-                  <div className='d-flex flex-column w-100 me-2'>
-                    <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>50%</span>
-                    </div>
-                    <div className='progress h-6px w-100'>
-                      <div
-                        className='progress-bar bg-warning'
-                        role='progressbar'
-                        style={{width: '50%'}}
-                      ></div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex justify-content-end flex-shrink-0'>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='switch' className='fs-3' />
-                    </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='pencil' className='fs-3' />
-                    </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
-                    >
-                      <KTIcon iconName='trash' className='fs-3' />
-                    </a>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div className='form-check form-check-sm form-check-custom form-check-solid'>
-                    <input className='form-check-input widget-9-check' type='checkbox' value='1' />
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex align-items-center'>
-                    <div className='symbol symbol-45px me-5'>
-                      <img src={toAbsoluteUrl('media/avatars/300-23.jpg')} alt='' />
-                    </div>
-                    <div className='d-flex justify-content-start flex-column'>
-                      <a href='#' className='text-gray-900 fw-bold text-hover-primary fs-6'>
-                        Kevin Leonard
-                      </a>
-                      <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                        HTML, JS, ReactJS
-                      </span>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <a href='#' className='text-gray-900 fw-bold text-hover-primary d-block fs-6'>
-                    RoadGee
-                  </a>
-                  <span className='text-muted fw-semibold text-muted d-block fs-7'>
-                    Art Director
-                  </span>
-                </td>
-                <td className='text-end'>
-                  <div className='d-flex flex-column w-100 me-2'>
-                    <div className='d-flex flex-stack mb-2'>
-                      <span className='text-muted me-2 fs-7 fw-semibold'>90%</span>
-                    </div>
-                    <div className='progress h-6px w-100'>
-                      <div
-                        className='progress-bar bg-info'
-                        role='progressbar'
-                        style={{width: '90%'}}
-                      ></div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div className='d-flex justify-content-end flex-shrink-0'>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='switch' className='fs-3' />
-                    </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1'
-                    >
-                      <KTIcon iconName='pencil' className='fs-3' />
-                    </a>
-                    <a
-                      href='#'
-                      className='btn btn-icon btn-bg-light btn-active-color-primary btn-sm'
-                    >
-                      <KTIcon iconName='trash' className='fs-3' />
-                    </a>
-                  </div>
-                </td>
-              </tr>
+                  </td>
+                  {/* Add more columns if necessary */}
+                </tr>
+              ))}
             </tbody>
-            {/* end::Table body */}
           </table>
-          {/* end::Table */}
         </div>
-        {/* end::Table container */}
       </div>
-      {/* begin::Body */}
     </div>
-  )
-}
+  );
+};
 
-export {TablesWidget9}
+export { TablesWidget9 };

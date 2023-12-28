@@ -11,7 +11,7 @@ const SidebarMenuMain = () => {
       {/* <SidebarMenuItem to="/dashboard" icon="element-11" title={intl.formatMessage({ id: "MENU.DASHBOARD" })} fontIcon="bi-app-indicator" />
       <SidebarMenuItem to="/builder" icon="switch" title="Layout Builder" fontIcon="bi-layers" /> */}
 
-      <SidebarMenuItem to="/crafted/pages/courses/console" fontIcon="bi-archive" icon="element-plus" title="Консоль" hasBullet={false} />
+      <SidebarMenuItem to="/crafted/pages/console" fontIcon="bi-archive" icon="element-plus" title="Консоль" hasBullet={false} />
 
       <div className="menu-item">
         <div className="menu-content pt-8 pb-2">
