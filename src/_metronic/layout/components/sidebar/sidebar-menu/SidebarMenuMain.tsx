@@ -1,5 +1,4 @@
 import { useIntl } from "react-intl";
-import { KTIcon } from "../../../../helpers";
 import { SidebarMenuItemWithSub } from "./SidebarMenuItemWithSub";
 import { SidebarMenuItem } from "./SidebarMenuItem";
 
@@ -22,6 +21,12 @@ const SidebarMenuMain = () => {
       <SidebarMenuItemWithSub to="/crafted/pages/courses" title="Курсы" hasBullet={false}>
         <SidebarMenuItem to="/crafted/pages/courses/list" title="Список курсов" hasBullet={true} />
       </SidebarMenuItemWithSub>
+        <SidebarMenuItem
+            to='/inventory'
+            icon='briefcase'
+            title='Инвентарь'
+            fontIcon='bi-layers'
+        />
 
       {/* <SidebarMenuItemWithSub to="/crafted/pages/wizards" title="Wizards" hasBullet={true}>
           <SidebarMenuItem to="/crafted/pages/wizards/horizontal" title="Horizontal" hasBullet={true} />

@@ -9,6 +9,7 @@ import { WithChildren } from "../../_metronic/helpers";
 import BuilderPageWrapper from "../pages/layout-builder/BuilderPageWrapper";
 import CoursesPage from "../modules/courses/CoursesPage";
 import { ConsolePage } from "../modules/console/ConsolePage";
+import InventoryPageWrapper from "../modules/inventory/InventoryPageWrapper.tsx";
 
 const PrivateRoutes = () => {
   const ProfilePage = lazy(() => import("../modules/profile/ProfilePage"));
@@ -92,6 +93,7 @@ const PrivateRoutes = () => {
             </SuspensedView>
           }
         />
+          <Route path='inventory' element={<InventoryPageWrapper />} />
         {/* Page Not Found */}
         <Route path="*" element={<Navigate to="/error/404" />} />
       </Route>
