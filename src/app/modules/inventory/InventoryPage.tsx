@@ -1044,10 +1044,10 @@ const InventoryPage: FC = () => {
                     <div className='mb-6'>
                         <h3 className='fw-bolder fs-5 m-0 mb-5'>Спортивные площадки</h3>
                         <div className='row mb-6'>
-                            <div className='col-lg-2'>
+                            <div className='col-lg-1'>
                                 <p className='fw-bolder fs-5 m-0 mb-5'>1</p>
                             </div>
-                            <div className='col-lg-10 row'>
+                            <div className='col-lg-11 row'>
 
                                 <div className='col-lg-3'>
                                     <label className="col-lg-8 pt-0 col-form-label required fw-bold fs-6">Вид
@@ -1101,10 +1101,10 @@ const InventoryPage: FC = () => {
                             </div>
                         </div>
                         <div className='row mb-6'>
-                            <div className='col-lg-2'>
-                                <p className='fw-bolder fs-5 m-0 mb-5'>2</p>
+                            <div className='col-lg-1'>
+                                <p className='fw-bolder fs-5 m-0 mb-5'>1</p>
                             </div>
-                            <div className='col-lg-10 row'>
+                            <div className='col-lg-11 row'>
 
                                 <div className='col-lg-3'>
                                     <label className="col-lg-8 pt-0 col-form-label required fw-bold fs-6">Вид
