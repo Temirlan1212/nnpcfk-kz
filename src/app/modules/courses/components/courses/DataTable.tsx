@@ -1,5 +1,5 @@
 import React from "react";
-import { toAbsoluteUrl } from "../../../../../_metronic/helpers";
+import { KTIcon, toAbsoluteUrl } from "../../../../../_metronic/helpers";
 
 type Props = {
   className?: string;
@@ -120,6 +120,47 @@ const DataTable: React.FC<Props> = ({ className }) => {
 
   return (
     <div className={`card ${className}`}>
+      <div className="card-header border-0 pt-5">
+        <h3 className="card-title align-items-start flex-column">
+          <span className="card-label fw-bold fs-3 mb-1">Курсы</span>
+          <span className="text-muted mt-1 fw-semibold fs-7">
+            Узнайте информацию о доступных курсах в системе
+          </span>
+        </h3>
+        <div className="card-toolbar d-flex" style={{ gap: "10px" }}>
+          <select
+            className="form-select w-auto"
+            aria-label="Default select example"
+          >
+            <option selected>По регионам</option>
+          </select>
+          <select
+            className="form-select w-auto"
+            aria-label="Default select example"
+          >
+            <option selected>Все даты</option>
+          </select>
+          <select
+            className="form-select w-auto"
+            aria-label="Default select example"
+          >
+            <option selected>Формат</option>
+          </select>
+
+          <div className="input-group d-flex w-auto" style={{ gap: "5px" }}>
+            {/* <a href="#" className="btn btn-light-dark">
+              <KTIcon iconName="search-list" className="fs-1" />
+            </a> */}
+            <input
+              type="text"
+              className="form-control w-auto"
+              placeholder="Поиск по курсам"
+              aria-label="Example text with button addon"
+              aria-describedby="button-addon1"
+            />
+          </div>
+        </div>
+      </div>
       {/* ... Other parts of the component */}
       <div className="card-body py-3">
         <div className="table-responsive">

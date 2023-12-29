@@ -5,6 +5,7 @@ export function Courses() {
     <>
       <div>
         {/* Render TablesWidget9 and pass courses data */}
+
         <DataTable />
 
         <div className="d-flex flex-stack flex-wrap pt-10 justify-content-center">
