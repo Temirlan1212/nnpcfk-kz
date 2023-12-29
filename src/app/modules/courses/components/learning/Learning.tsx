@@ -1,7 +1,7 @@
 export function Learning() {
   return (
     <>
-      <div>Тестирование</div>
+      <div>Обучение</div>
     </>
   );
 }
