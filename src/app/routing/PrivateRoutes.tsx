@@ -5,9 +5,9 @@ import { getCSSVariableValue } from '../../_metronic/assets/ts/_utils'
 import { WithChildren } from '../../_metronic/helpers'
 import { MasterLayout } from '../../_metronic/layout/MasterLayout'
 import CertificateWrapper from '../modules/certificate/CertificateWrapper.tsx'
+import CompetitionsPage from '../modules/competitions/CompetitionsPage'
 import { ConsolePage } from '../modules/console/ConsolePage'
 import CoursesPage from '../modules/courses/CoursesPage'
-import CompetitionsPage from '../modules/competitions/CompetitionsPage'
 import InventoryPageWrapper from '../modules/inventory/InventoryPageWrapper.tsx'
 import ViewReport from '../modules/inventory/ViewReport.tsx'
 import ReportPageWrapper from '../modules/report/ReportWrapper.tsx'
@@ -22,6 +22,9 @@ const PrivateRoutes = () => {
 	const WizardsPage = lazy(() => import('../modules/wizards/WizardsPage'))
 	const AccountPage = lazy(() => import('../modules/accounts/AccountPage'))
 	const WidgetsPage = lazy(() => import('../modules/widgets/WidgetsPage'))
+	const LearningPage = lazy(
+		() => import('../modules/learning/LearningPage.tsx')
+	)
 	const ChatPage = lazy(() => import('../modules/apps/chat/ChatPage'))
 	const UsersPage = lazy(
 		() => import('../modules/apps/user-management/UsersPage')
@@ -31,7 +34,10 @@ const PrivateRoutes = () => {
 		<Routes>
 			<Route element={<MasterLayout />}>
 				{/* Redirect to Dashboard after success login/registartion */}
-				<Route path='auth/*' element={<Navigate to='/dashboard' />} />
+				<Route
+					path='auth/*'
+					element={<Navigate to='/crafted/pages/console/*' />}
+				/>
 				{/* Pages */}
 				<Route path='dashboard' element={<DashboardWrapper />} />
 				<Route path='builder' element={<BuilderPageWrapper />} />
@@ -53,14 +59,14 @@ const PrivateRoutes = () => {
 						</SuspensedView>
 					}
 				/>
-                <Route
-                    path="crafted/pages/competitions/*"
-                    element={
-                        <SuspensedView>
-                            <CompetitionsPage />
-                        </SuspensedView>
-                    }
-                />
+				<Route
+					path='crafted/pages/competitions/*'
+					element={
+						<SuspensedView>
+							<CompetitionsPage />
+						</SuspensedView>
+					}
+				/>
 				<Route
 					path='crafted/pages/courses/*'
 					element={
@@ -122,6 +128,14 @@ const PrivateRoutes = () => {
 					element={
 						<SuspensedView>
 							<ProfilePage />
+						</SuspensedView>
+					}
+				/>
+				<Route
+					path='learning'
+					element={
+						<SuspensedView>
+							<LearningPage />
 						</SuspensedView>
 					}
 				/>

@@ -96,6 +96,12 @@ const SidebarMenuMain = () => {
 				fontIcon='bi-layers'
 			/>
 			<SidebarMenuItem
+				to='learning'
+				icon='book-square'
+				title='Обучение'
+				fontIcon='bi-layers'
+			/>
+			<SidebarMenuItem
 				to='/profile'
 				icon='profile-circle'
 				title='Мой Профиль'
