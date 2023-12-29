@@ -51,7 +51,7 @@ const SidebarMenuMain = () => {
       />
 
       <SidebarMenuItemWithSub
-        icon="general"
+        icon="icon"
         to="/training"
         title="Тренировки"
         fontIcon="bi-person"
