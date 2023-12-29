@@ -1,6 +1,6 @@
 import React from "react";
-import { KTIcon, toAbsoluteUrl } from "../../../helpers";
-import { Dropdown1 } from "../../content/dropdown/Dropdown1";
+import { KTIcon, toAbsoluteUrl } from "../../../../_metronic/helpers";
+import { Dropdown1 } from "../../../../_metronic/partials";
 
 type Props = {
   className: string;
@@ -27,9 +27,9 @@ const FeedsWidget6: React.FC<Props> = ({ className }) => {
                 href="#"
                 className="text-gray-800 text-hover-primary fs-6 fw-bold"
               >
-                Mat Dillon
+                Обучающее видео по платформе
               </a>
-              <span className="text-gray-500 fw-semibold">Last month</span>
+              <span className="text-gray-500 fw-semibold">Вчера в 5:06 PM</span>
             </div>
             {/* end::Info */}
           </div>
@@ -56,8 +56,8 @@ const FeedsWidget6: React.FC<Props> = ({ className }) => {
         <div className="mb-6">
           {/* begin::Text */}
           <div className="text-gray-800 fs-6 fw-normal mb-5">
-            Outlines keep you honest. They stop you from indulging in poorly
-            thought-out metaphors
+            Не знаете с чего начать? Посмотрите видео-инструкцию о том, как
+            использовать нашу платформу!
           </div>
           {/* end::Text */}
 

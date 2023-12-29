@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import Certificate from "./Certificate";
-import { KTIcon } from "../../../_metronic/helpers";
+import { KTIcon } from "../../../../../_metronic/helpers";
 import AddCertificateModal from "./AddCertificateModal";
 
 const CertificateWrapper: FC = () => {

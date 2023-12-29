@@ -31,11 +31,11 @@ export function TrainingReminder() {
         </div>
 
         <div className="d-flex position-relative" style={{ zIndex: 1 }}>
-          <a href="#" className="btn btn-primary">
+          <a href="#" className="btn btn-danger">
             Записаться
           </a>
 
-          <a className="btn btn-light ms-2">Сохранить в избранное</a>
+          <a className="btn btn-dark ms-2">Сохранить в избранное</a>
         </div>
 
         <img

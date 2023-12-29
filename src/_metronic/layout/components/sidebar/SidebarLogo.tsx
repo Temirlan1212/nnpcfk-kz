@@ -13,15 +13,24 @@ const SidebarLogo = (props: PropsType) => {
   const { config } = useLayout();
   const toggleRef = useRef<HTMLDivElement>(null);
 
-  const appSidebarDefaultMinimizeDesktopEnabled = config?.app?.sidebar?.default?.minimize?.desktop?.enabled;
-  const appSidebarDefaultCollapseDesktopEnabled = config?.app?.sidebar?.default?.collapse?.desktop?.enabled;
-  const toggleType = appSidebarDefaultCollapseDesktopEnabled ? "collapse" : appSidebarDefaultMinimizeDesktopEnabled ? "minimize" : "";
+  const appSidebarDefaultMinimizeDesktopEnabled =
+    config?.app?.sidebar?.default?.minimize?.desktop?.enabled;
+  const appSidebarDefaultCollapseDesktopEnabled =
+    config?.app?.sidebar?.default?.collapse?.desktop?.enabled;
+  const toggleType = appSidebarDefaultCollapseDesktopEnabled
+    ? "collapse"
+    : appSidebarDefaultMinimizeDesktopEnabled
+    ? "minimize"
+    : "";
   const toggleState = appSidebarDefaultMinimizeDesktopEnabled ? "active" : "";
-  const appSidebarDefaultMinimizeDefault = config.app?.sidebar?.default?.minimize?.desktop?.default;
+  const appSidebarDefaultMinimizeDefault =
+    config.app?.sidebar?.default?.minimize?.desktop?.default;
 
   useEffect(() => {
     setTimeout(() => {
-      const toggleObj = ToggleComponent.getInstance(toggleRef.current!) as ToggleComponent | null;
+      const toggleObj = ToggleComponent.getInstance(
+        toggleRef.current!
+      ) as ToggleComponent | null;
 
       if (toggleObj === null) {
         return;
@@ -44,10 +53,16 @@ const SidebarLogo = (props: PropsType) => {
   return (
     <div className="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
       <Link to="/dashboard" className="menu-link without-sub white">
-        <div className="text-light !font-weight-bold">Личный кабинет</div>
+        <h4 className="card-title fw-bold text-light app-sidebar-logo-default">
+          Личный кабинет
+        </h4>
+        <h4 className="card-title fw-bold text-light app-sidebar-logo-minimize">
+          Л
+        </h4>
       </Link>
 
-      {(appSidebarDefaultMinimizeDesktopEnabled || appSidebarDefaultCollapseDesktopEnabled) && (
+      {(appSidebarDefaultMinimizeDesktopEnabled ||
+        appSidebarDefaultCollapseDesktopEnabled) && (
         <div
           ref={toggleRef}
           id="kt_app_sidebar_toggle"

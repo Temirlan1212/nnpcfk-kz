@@ -1,6 +1,7 @@
 import { PageLink, PageTitle } from "../../../_metronic/layout/core";
 import { Routes, Route, Outlet } from "react-router-dom";
 import { Courses } from "./components/Courses";
+import CertificateWrapper from "./components/certificate/CertificateWrapper";
 
 const profileBreadCrumbs: Array<PageLink> = [
   {
@@ -33,6 +34,15 @@ const CoursesPage = () => (
           <>
             <PageTitle breadcrumbs={profileBreadCrumbs}>List</PageTitle>
             <Courses />
+          </>
+        }
+      />
+      <Route
+        path="certificate"
+        element={
+          <>
+            <PageTitle breadcrumbs={profileBreadCrumbs}>List</PageTitle>
+            <CertificateWrapper />
           </>
         }
       />
