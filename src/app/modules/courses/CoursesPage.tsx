@@ -5,6 +5,7 @@ import CertificateWrapper from "./components/certificate/CertificateWrapper";
 import { FavoriteCourses } from "./components/favorite-courses/FavoriteCourses";
 import { Testing } from "./components/testing/Testing";
 import { Learning } from "./components/learning/Learning";
+import { Course } from "./components/course/Course";
 
 const profileBreadCrumbs: Array<PageLink> = [
   {
@@ -39,6 +40,15 @@ const CoursesPage = () => (
               Список курсов
             </PageTitle>
             <Courses />
+          </>
+        }
+      />
+      <Route
+        path="/list/:id"
+        element={
+          <>
+            <PageTitle breadcrumbs={profileBreadCrumbs}>Курс</PageTitle>
+            <Course />
           </>
         }
       />
