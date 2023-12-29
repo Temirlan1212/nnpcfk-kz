@@ -135,17 +135,20 @@ const TablesWidget15: React.FC<Props> = ({ className }) => {
     return (
         <div className={`card ${className}`}>
             {/* ... Other parts of the component */}
-            <div className="d-flex">
-                <div className="p-10 w-100">
-                    <h3>Басткебол</h3>
-                    <div className="text-muted me-2 fs-6 fw-bold">
-                        Найдено 15 соревнований
+            <div className="row">
+                <div className="col-md-4">
+                    <div className="p-10 w-100">
+                        <h3>Басткебол</h3>
+                        <div className="text-muted me-2 fs-6 fw-bold">
+                            Найдено 15 соревнований
+                        </div>
                     </div>
                 </div>
-                <div className="d-flex w-100 justify-content-end">
+                <div className="col-md-4"></div>
+                <div className="col-md-2">
                     <div className="p-9 flex items-center">
                         <div className="d-flex">
-                            <div className="text-muted me-2 fs-6 fw-bold">
+                            <div className="text-muted fs-6 fw-bold">
                                 Этап
                             </div>
                             <select className="border-0 appearance-auto">
@@ -160,9 +163,11 @@ const TablesWidget15: React.FC<Props> = ({ className }) => {
                             </select>
                         </div>
                     </div>
+                </div>
+                <div className="col-md-2">
                     <div className="p-9 flex items-center">
                         <div className="d-flex">
-                            <div className="text-muted me-2 fs-6 fw-bold">
+                            <div className="text-muted fs-6 fw-bold">
                                 Статус
                             </div>
                             <select className="border-0 appearance-auto">
