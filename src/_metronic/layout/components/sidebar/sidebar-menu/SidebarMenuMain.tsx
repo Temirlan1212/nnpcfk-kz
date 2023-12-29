@@ -38,8 +38,23 @@ const SidebarMenuMain = () => {
           hasBullet={true}
         />
         <SidebarMenuItem
+          to="/crafted/pages/courses/favorite-courses"
+          title="Избранные курсы"
+          hasBullet={true}
+        />
+        <SidebarMenuItem
           to="/crafted/pages/courses/certificate"
           title="Реестр сертификатов"
+          hasBullet={true}
+        />
+        <SidebarMenuItem
+          to="/crafted/pages/courses/learning"
+          title="Обучение"
+          hasBullet={true}
+        />
+        <SidebarMenuItem
+          to="/crafted/pages/courses/testing"
+          title="Тестирование"
           hasBullet={true}
         />
       </SidebarMenuItemWithSub>
