@@ -27,6 +27,7 @@ const SidebarMenuMain = () => {
 			</div>
 
 			<SidebarMenuItemWithSub
+				icon='book-open'
 				to='/crafted/pages/courses'
 				title='Курсы'
 				hasBullet={false}
@@ -36,17 +37,31 @@ const SidebarMenuMain = () => {
 					title='Список курсов'
 					hasBullet={true}
 				/>
+				<SidebarMenuItem
+					to='/crafted/pages/courses/favorite-courses'
+					title='Избранные курсы'
+					hasBullet={true}
+				/>
+				<SidebarMenuItem
+					to='/crafted/pages/courses/certificate'
+					title='Реестр сертификатов'
+					hasBullet={true}
+				/>
+				<SidebarMenuItem
+					to='/crafted/pages/courses/learning'
+					title='Обучение'
+					hasBullet={true}
+				/>
+				<SidebarMenuItem
+					to='/crafted/pages/courses/testing'
+					title='Тестирование'
+					hasBullet={true}
+				/>
 			</SidebarMenuItemWithSub>
 			<SidebarMenuItem
 				to='/report'
 				icon='chart-simple'
 				title='Мои отчёты'
-				fontIcon='bi-layers'
-			/>
-			<SidebarMenuItem
-				to='/inventory'
-				icon='briefcase'
-				title='Инвентарь'
 				fontIcon='bi-layers'
 			/>
 
@@ -108,6 +123,48 @@ const SidebarMenuMain = () => {
 				fontIcon='bi-layers'
 			/>
 			{/* <SidebarMenuItemWithSub to="/crafted/pages/wizards" title="Wizards" hasBullet={true}>
+      <SidebarMenuItemWithSub
+        icon="icon"
+        to="/training"
+        title="Тренировки"
+        fontIcon="bi-person"
+      >
+        <SidebarMenuItem
+          to="/training/add-training"
+          title="Добавить тренировку"
+          hasBullet={true}
+        />
+        <SidebarMenuItem
+          to="/training/table"
+          title="Таблица"
+          hasBullet={true}
+        />
+      </SidebarMenuItemWithSub>
+      <SidebarMenuItemWithSub
+        icon="ranking"
+        to="/crafted/pages/competitions"
+        title="Соревнования"
+        hasBullet={false}
+      >
+        <SidebarMenuItem
+          to="/crafted/pages/competitions/list"
+          title="Список"
+          hasBullet={true}
+        />
+      </SidebarMenuItemWithSub>
+      <SidebarMenuItem
+        to="/inventory"
+        icon="briefcase"
+        title="Инвентарь"
+        fontIcon="bi-layers"
+      />
+      <SidebarMenuItem
+        to="/profile"
+        icon="profile-circle"
+        title="Мой Профиль"
+        fontIcon="bi-layers"
+      />
+      {/* <SidebarMenuItemWithSub to="/crafted/pages/wizards" title="Wizards" hasBullet={true}>
           <SidebarMenuItem to="/crafted/pages/wizards/horizontal" title="Horizontal" hasBullet={true} />
           <SidebarMenuItem to="/crafted/pages/wizards/vertical" title="Vertical" hasBullet={true} />
         </SidebarMenuItemWithSub> */}

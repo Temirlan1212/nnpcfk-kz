@@ -40,12 +40,15 @@ export function ActionReseearchCard() {
         </div>
         <div className="card-body d-flex align-items-end pt-0 mt-5">
           <div className="d-flex align-items-center flex-column mt-5 w-100">
-            <div className="d-flex fw-bold fs-6 text-white  w-100 mt-auto mb-2">
+            <div
+              className="d-flex fw-bold fs-6 text-white flex-wrap w-100 mt-auto mb-2"
+              style={{ gap: "10px" }}
+            >
               <a href="#" className="btn btn-primary">
                 Записаться
               </a>
 
-              <a className="btn btn-light ms-2">Сохранить в избранное</a>
+              <a className="btn btn-light">Сохранить в избранное</a>
             </div>
           </div>
         </div>
