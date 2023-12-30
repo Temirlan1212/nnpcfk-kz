@@ -10,6 +10,7 @@ import { ConsolePage } from '../modules/console/ConsolePage'
 import CoursesPage from '../modules/courses/CoursesPage'
 import InventoryPageWrapper from '../modules/inventory/InventoryPageWrapper.tsx'
 import ViewReport from '../modules/inventory/ViewReport.tsx'
+import LearningSchedule from '../modules/learning/LearningSchedule.tsx'
 import ReportPageWrapper from '../modules/report/ReportWrapper.tsx'
 import SubmitReport from '../modules/report/SubmitReport.tsx'
 import TrainingPage from '../modules/training/TrainingPage.tsx'
@@ -138,7 +139,9 @@ const PrivateRoutes = () => {
 							<LearningPage />
 						</SuspensedView>
 					}
-				/>
+				></Route>
+				<Route path='schedule' element={<LearningSchedule />} />
+
 				<Route path='report' element={<ReportPageWrapper />} />
 				<Route path='submit-report' element={<SubmitReport />} />
 				<Route path='view-report' element={<ViewReport />} />
