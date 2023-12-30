@@ -104,18 +104,7 @@ const SidebarMenuMain = () => {
 					hasBullet={true}
 				/>
 			</SidebarMenuItemWithSub>
-			<SidebarMenuItem
-				to='certificate'
-				icon='briefcase'
-				title='Сертификаты'
-				fontIcon='bi-layers'
-			/>
-			<SidebarMenuItem
-				to='learning'
-				icon='book-square'
-				title='Обучение'
-				fontIcon='bi-layers'
-			/>
+
 			<SidebarMenuItem
 				to='/profile'
 				icon='profile-circle'

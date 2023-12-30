@@ -129,7 +129,7 @@ const PrivateRoutes = () => {
 					}
 				/>
 				<Route
-					path='learning'
+					path='/crafted/pages/courses/learning'
 					element={
 						<SuspensedView>
 							<LearningPage />
