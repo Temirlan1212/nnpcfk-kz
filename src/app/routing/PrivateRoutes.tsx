@@ -7,9 +7,9 @@ import { MasterLayout } from '../../_metronic/layout/MasterLayout'
 import CompetitionsPage from '../modules/competitions/CompetitionsPage'
 import { ConsolePage } from '../modules/console/ConsolePage'
 import CoursesPage from '../modules/courses/CoursesPage'
+import LearningSchedule from '../modules/courses/components/learning/LearningSchedule.tsx'
 import InventoryPageWrapper from '../modules/inventory/InventoryPageWrapper.tsx'
 import ViewReport from '../modules/inventory/ViewReport.tsx'
-import LearningSchedule from '../modules/learning/LearningSchedule.tsx'
 import ReportPageWrapper from '../modules/report/ReportWrapper.tsx'
 import SubmitReport from '../modules/report/SubmitReport.tsx'
 import TrainingPage from '../modules/training/TrainingPage.tsx'
@@ -20,7 +20,7 @@ import BuilderPageWrapper from '../pages/layout-builder/BuilderPageWrapper'
 const PrivateRoutes = () => {
 	const ProfilePage = lazy(() => import('../modules/profile/ProfilePage'))
 	const LearningPage = lazy(
-		() => import('../modules/learning/LearningPage.tsx')
+		() => import('../modules/courses/components/learning/LearningPage.tsx')
 	)
 	const WizardsPage = lazy(() => import('../modules/wizards/WizardsPage'))
 	const AccountPage = lazy(() => import('../modules/accounts/AccountPage'))

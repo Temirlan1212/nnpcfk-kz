@@ -1,3 +1,6 @@
+import { ColumnChart } from './chart/ColumnChart'
+import { DonutChart } from './chart/DonutChart'
+
 const LearningEffiency = () => {
 	return (
 		<div className='col-xxl-8'>
@@ -179,46 +182,7 @@ const LearningEffiency = () => {
 										Ваша посещаемость уроков
 									</div>
 
-									<img
-										src='/public/media/illustrations/easy/donut-chart.svg'
-										alt='donut-chart'
-										width={250}
-										height={250}
-									/>
-
-									<div className='mx-auto'>
-										<div className='d-flex align-items-center mb-2'>
-											<div className='bullet bullet-dot w-8px h-7px bg-success me-2'></div>
-
-											<div className='fs-8 fw-semibold text-muted'>
-												Присутствовал(133)
-											</div>
-										</div>
-
-										<div className='d-flex align-items-center mb-2'>
-											<div className='bullet bullet-dot w-8px h-7px bg-primary me-2'></div>
-
-											<div className='fs-8 fw-semibold text-muted'>
-												Отпросился (9)
-											</div>
-										</div>
-
-										<div className='d-flex align-items-center mb-2'>
-											<div className='bullet bullet-dot w-8px h-7px bg-info me-2'></div>
-
-											<div className='fs-8 fw-semibold text-muted'>
-												Опоздал(2)
-											</div>
-										</div>
-
-										<div className='d-flex align-items-center mb-2'>
-											<div className='bullet bullet-dot w-8px h-7px bg-danger me-2'></div>
-
-											<div className='fs-8 fw-semibold text-muted'>
-												Отсутствовал(3)
-											</div>
-										</div>
-									</div>
+									<DonutChart className='' />
 								</div>
 							</div>
 						</div>
@@ -226,12 +190,7 @@ const LearningEffiency = () => {
 							className='tab-pane fade'
 							id='kt_chart_widgets_22_tab_content_2'
 						>
-							<div className='me-md-5 w-100 h-100 d-flex flex-wrap justify-content-center flex-md-nowrap'>
-								<img
-									src='/media/illustrations/easy/activity-learn.svg'
-									alt='chart'
-								/>
-							</div>
+							<ColumnChart className='' />
 						</div>
 					</div>
 				</div>

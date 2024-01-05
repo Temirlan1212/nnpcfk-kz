@@ -1,3 +1,5 @@
+import { LineChart } from './chart/LineChart'
+
 const LearningPerformance = () => {
 	return (
 		<div className='col-xxl-4'>
@@ -64,11 +66,7 @@ const LearningPerformance = () => {
 								<span className='text-gray-500 fw-bold fs-4'>62%</span>
 							</div>
 
-							<img
-								src='/public/media/illustrations/easy/chart.svg'
-								alt='chart'
-								className='w-100 mt-14 px-4'
-							/>
+							<LineChart className='' />
 						</div>
 						<div className='carousel-item'>
 							<span className='text-gray-800 fw-bold fs-4 mb-3 px-8'>
