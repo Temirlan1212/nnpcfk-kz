@@ -38,7 +38,7 @@ const LineChart: FC<Props> = () => {
 		<div
 			ref={chartRef}
 			id='kt_charts_widget_1_chart'
-			style={{ height: '400px' }}
+			style={{ height: '300px', display: 'flex', alignItems: 'center' }}
 		/>
 	)
 }

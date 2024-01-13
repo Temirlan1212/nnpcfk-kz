@@ -84,11 +84,7 @@ const LearningPerformance = () => {
 								<span className='text-gray-500 fw-bold fs-4'>73%</span>
 							</div>
 
-							<img
-								src='/public/media/illustrations/easy/chart.svg'
-								alt='chart'
-								className='w-100 mt-10 px-10'
-							/>
+							<LineChart className='' />
 						</div>
 					</div>
 				</div>

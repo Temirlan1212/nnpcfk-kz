@@ -70,21 +70,21 @@ const LearningCourses = () => {
 										)}
 									</div>
 								</div>
-								<div className='d-flex align-items-center flex-row-fluid flex-wrap'>
-									<div className='flex-grow-1 me-2'>
+								<div className='d-flex align-items-center flex-row-fluid flex-nowrap '>
+									<div className='flex-grow-1 me-2 w-100 w-xl-50 w-xxl-75'>
 										<a
 											href='pages/user-profile/overview.html'
-											className='text-gray-800 text-hover-primary fs-6 fw-bold'
+											className='text-gray-800 text-hover-primary fs-6 fw-bold d-inline-block text-truncate w-100 w-xl-50 w-xxl-75'
 										>
 											{item.title}
 										</a>
-										<span className='text-muted fw-semibold d-block fs-7'>
+										<span className='text-muted fw-semibold d-block fs-7 '>
 											{item.courseAmount}
 										</span>
 									</div>
 									<a
 										href='#'
-										className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px'
+										className='btn btn-sm btn-icon btn-bg-light btn-active-color-primary w-30px h-30px '
 									>
 										<i className='ki-duotone ki-arrow-right fs-2'>
 											<span className='path1'></span>

@@ -136,7 +136,10 @@ const PrivateRoutes = () => {
 						</SuspensedView>
 					}
 				></Route>
-				<Route path='schedule' element={<LearningSchedule />} />
+				<Route
+					path='/crafted/pages/courses/learning/schedule'
+					element={<LearningSchedule />}
+				/>
 				<Route path='report' element={<ReportPageWrapper />} />
 				<Route path='submit-report' element={<SubmitReport />} />
 				<Route path='view-report' element={<ViewReport />} />
