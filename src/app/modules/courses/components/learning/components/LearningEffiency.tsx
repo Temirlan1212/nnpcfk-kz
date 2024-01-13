@@ -77,11 +77,11 @@ const LearningEffiency = () => {
 											<div className='me-2'>
 												<a
 													href='#'
-													className='text-gray-800 text-hover-primary fs-6 fw-bold'
+													className='text-gray-800 text-hover-primary fs-7 fs-sm-6 fw-bold'
 												>
 													Посещаемость
 												</a>
-												<span className='text-gray-500 fw-bold d-block fs-7'>
+												<span className='text-gray-500 fw-bold d-block fs-8 fs-sm-7'>
 													Вы посетили почти все занятия! Так держать!
 												</span>
 											</div>
@@ -116,11 +116,11 @@ const LearningEffiency = () => {
 											<div className='me-2'>
 												<a
 													href='#'
-													className='text-gray-800 text-hover-primary fs-6 fw-bold'
+													className='text-gray-800 text-hover-primary  fs-7 fs-sm-6 fw-bold'
 												>
 													Домашнее задание
 												</a>
-												<span className='text-gray-500 fw-bold d-block fs-7'>
+												<span className='text-gray-500 fw-bold d-block  fs-8 fs-sm-7'>
 													Не забудьте вовремя выполнять домашнее задание
 												</span>
 											</div>
@@ -153,11 +153,11 @@ const LearningEffiency = () => {
 											<div className='me-2'>
 												<a
 													href='#'
-													className='text-gray-800 text-hover-primary fs-6 fw-bold'
+													className='text-gray-800 text-hover-primary fs-7 fs-sm-6 fw-bold'
 												>
 													Пробные тесты
 												</a>
-												<span className='text-gray-500 fw-bold d-block fs-7'>
+												<span className='text-gray-500 fw-bold d-block  fs-8 fs-sm-7'>
 													Вы прошли 5 пробных тестирования за 7 дней
 												</span>
 											</div>
@@ -177,7 +177,7 @@ const LearningEffiency = () => {
 										</div>
 									</div>
 								</div>
-								<div className='d-flex justify-content-between align-items-center gap-3 flex-column w-225px w-md-600px mx-auto mx-md-0 pt-3 pb-10'>
+								<div className='d-flex justify-content-start align-items-center gap-5 flex-column w-225px w-md-600px mx-auto mx-md-0 pt-3 pb-10'>
 									<div className='fs-4 fw-bold text-gray-900 text-center mb-5'>
 										Ваша посещаемость уроков
 									</div>

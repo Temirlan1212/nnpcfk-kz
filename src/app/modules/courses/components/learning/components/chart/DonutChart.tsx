@@ -56,14 +56,39 @@ function getChartOptions(): ApexOptions {
 		chart: {
 			type: 'donut',
 			fontFamily: 'inherit',
-			width: 400,
-			height: 400,
+			width: 240,
+			height: 330,
 		},
+		responsive: [
+			{
+				breakpoint: 1480,
+				options: {
+					chart: {
+						width: 230,
+						height: 300,
+					},
+				},
+			},
+			{
+				breakpoint: 1080,
+				options: {
+					chart: {
+						width: 200,
+						height: 300,
+					},
+				},
+			},
+		],
 		labels: ['Присутствовал', 'Отпросился', 'Опоздал', 'Отсутствовал'],
 		colors: [successColor, primaryColor, secondaryColor, tertiaryColor],
 		legend: {
 			position: 'bottom',
 			// horizontalAlign: 'left',
+			width: 150,
+			horizontalAlign: 'left',
+			itemMargin: {
+				horizontal: 10,
+			},
 		},
 		plotOptions: {
 			pie: {

@@ -419,7 +419,7 @@ const LearningPlan = () => {
 						</div>
 					</div>
 					<div className='float-end'>
-						<Link to='/schedule' className='btn btn-xl btn-danger mt-7'>
+						<Link to='schedule' className='btn btn-xl btn-danger mt-7'>
 							Смотреть всё расписание
 						</Link>
 					</div>
