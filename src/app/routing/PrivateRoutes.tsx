@@ -10,6 +10,8 @@ import CoursesPage from '../modules/courses/CoursesPage'
 import LearningSchedule from '../modules/courses/components/learning/LearningSchedule.tsx'
 import InventoryPageWrapper from '../modules/inventory/InventoryPageWrapper.tsx'
 import ViewReport from '../modules/inventory/ViewReport.tsx'
+import InventoryPageWrapperAdmin from '../modules/inventory/admin/InventoryPageWrapperAdmin.tsx'
+import ProfilePageAdmin from '../modules/profile/ProfilePageAdmin.tsx'
 import ReportPageWrapper from '../modules/report/ReportWrapper.tsx'
 import SubmitReport from '../modules/report/SubmitReport.tsx'
 import TrainingPage from '../modules/training/TrainingPage.tsx'
@@ -121,10 +123,18 @@ const PrivateRoutes = () => {
 					}
 				/>
 				<Route
-					path='profile'
+					path='/crafted/pages/courses/profile'
 					element={
 						<SuspensedView>
 							<ProfilePage />
+						</SuspensedView>
+					}
+				/>
+				<Route
+					path='/crafted/pages/courses/profile/admin'
+					element={
+						<SuspensedView>
+							<ProfilePageAdmin />
 						</SuspensedView>
 					}
 				/>
@@ -144,6 +154,7 @@ const PrivateRoutes = () => {
 				<Route path='submit-report' element={<SubmitReport />} />
 				<Route path='view-report' element={<ViewReport />} />
 				<Route path='inventory' element={<InventoryPageWrapper />} />
+				<Route path='inventory/admin' element={<InventoryPageWrapperAdmin />} />
 
 				{/* Page Not Found */}
 				<Route path='*' element={<Navigate to='/error/404' />} />
