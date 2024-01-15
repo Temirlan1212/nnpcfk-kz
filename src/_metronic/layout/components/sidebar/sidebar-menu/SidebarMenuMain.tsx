@@ -106,7 +106,7 @@ const SidebarMenuMain = () => {
 			</SidebarMenuItemWithSub>
 
 			<SidebarMenuItem
-				to='/profile'
+				to='/crafted/pages/courses/profile'
 				icon='profile-circle'
 				title='Мой Профиль'
 				fontIcon='bi-layers'
