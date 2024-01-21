@@ -167,7 +167,7 @@ export function Login() {
           {/* begin::Wrapper */}
           <div className="text-gray-500 mb-5">
             Забыли пароль?
-            <Link to="/auth/registration">
+            <Link to="/auth/forgot-password">
               <span className="ms-1 link-primary">Восстановить</span>
             </Link>
           </div>
