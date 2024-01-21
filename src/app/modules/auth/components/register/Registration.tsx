@@ -9,6 +9,7 @@ import { PasswordMeterComponent } from "../../../../../_metronic/assets/ts/compo
 import { useAuth } from "../../core/Auth";
 import SVG from "react-inlinesvg";
 import { registrationFormFieldsData, registrationFormSchema } from "./schema";
+import { handle400FormErrors } from "../../../../helpers/errors";
 
 const initialValues = {
   school: "",
@@ -26,7 +27,7 @@ export function Registration() {
   const formik = useFormik({
     initialValues,
     validationSchema: registrationFormSchema,
-    onSubmit: async (values, { setStatus, setSubmitting }) => {
+    onSubmit: async (values, { setFieldError, setStatus, setSubmitting }) => {
       setLoading(true);
       try {
         const { data: auth } = await register(
@@ -39,12 +40,15 @@ export function Registration() {
         saveAuth(auth.user);
         const { data: user } = await getUserByToken(auth.user.token);
         setCurrentUser(user);
-      } catch (error) {
-        console.error(error);
+      } catch (error: any) {
+        const errors = error?.response?.data?.errors || {};
+        const message = error?.response?.data?.message;
+        handle400FormErrors(errors, { setFieldError });
         saveAuth(undefined);
-        setStatus("The registration details is incorrect");
+        setStatus(message || "The registration details is incorrect");
         setSubmitting(false);
         setLoading(false);
+        console.error(error);
       }
     },
   });

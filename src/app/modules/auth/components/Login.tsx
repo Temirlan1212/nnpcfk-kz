@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import { getUserByToken, login } from "../core/_requests";
 import { useAuth } from "../core/Auth";
 import { toAbsoluteUrl } from "../../../../_metronic/helpers";
+import { handle400FormErrors } from "../../../helpers/errors";
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()
@@ -37,19 +38,22 @@ export function Login() {
   const formik = useFormik({
     initialValues,
     validationSchema: loginSchema,
-    onSubmit: async (values, { setStatus, setSubmitting }) => {
+    onSubmit: async (values, { setFieldError, setStatus, setSubmitting }) => {
       setLoading(true);
       try {
         const { data: auth } = await login(values.email, values.password);
         saveAuth(auth.user);
         const { data: user } = await getUserByToken(auth.user.token);
         setCurrentUser(user);
-      } catch (error) {
-        console.error(error);
+      } catch (error: any) {
+        const errors = error?.response?.data?.errors || {};
+        const message = error?.response?.data?.message;
+        handle400FormErrors(errors, { setFieldError });
         saveAuth(undefined);
-        setStatus("The login details are incorrect");
+        setStatus(message || "The login details are incorrect");
         setSubmitting(false);
         setLoading(false);
+        console.error(error);
       }
     },
   });
@@ -161,12 +165,11 @@ export function Login() {
           {/* end::Form group */}
 
           {/* begin::Wrapper */}
-          <div className="d-flex flex-stack flex-wrap gap-3 fs-base fw-semibold mb-8">
-            {/* begin::Link */}
-            <Link to="/auth/forgot-password" className="link-primary">
-              Я забыл пароль
+          <div className="text-gray-500 mb-5">
+            Забыли пароль?
+            <Link to="/auth/registration">
+              <span className="ms-1 link-primary">Восстановить</span>
             </Link>
-            {/* end::Link */}
           </div>
           {/* end::Wrapper */}
 
