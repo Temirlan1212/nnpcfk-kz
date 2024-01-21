@@ -40,9 +40,6 @@ export function AccauntCreate({
           values.changepassword
         );
         onSubmit(auth.user);
-        saveAuth(auth.user);
-        const { data: user } = await getUserByToken(auth.user.token);
-        setCurrentUser(user);
       } catch (error: any) {
         const errors = error?.response?.data?.errors || {};
         const message = error?.response?.data?.message;
