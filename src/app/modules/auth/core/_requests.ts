@@ -10,7 +10,7 @@ export const REQUEST_PASSWORD_URL = `${API_URL}/forgot_password`;
 
 // Server should return AuthModel
 export function login(email: string, password: string) {
-  return axios.post<AuthModel>(LOGIN_URL, {
+  return axios.post<{ user: AuthModel }>(LOGIN_URL, {
     email,
     password,
   });
@@ -24,7 +24,7 @@ export function register(
   password: string,
   password_confirmation: string
 ) {
-  return axios.post(REGISTER_URL, {
+  return axios.post<{ user: AuthModel }>(REGISTER_URL, {
     email,
     first_name: firstname,
     last_name: lastname,
@@ -41,7 +41,8 @@ export function requestPassword(email: string) {
 }
 
 export function getUserByToken(token: string) {
-  return axios.post<UserModel>(GET_USER_BY_ACCESSTOKEN_URL, {
-    api_token: token,
-  });
+  let body: any = {};
+  let config: any = {};
+  config.headers = { Authorization: `Bearer ${token}` };
+  return axios.post<UserModel>(GET_USER_BY_ACCESSTOKEN_URL, body, config);
 }
