@@ -149,7 +149,7 @@ export function AccauntCreate({
           {!loading && <span className="indicator-label">Регистрация</span>}
           {loading && (
             <span className="indicator-progress" style={{ display: "block" }}>
-              Please wait...{" "}
+              Подождите...{" "}
               <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
             </span>
           )}

@@ -30,19 +30,31 @@ export const registrationFormSchema = object().shape({
 export const registrationFormFieldsData = [
   {
     name: "firstname",
-    label: "Имя",
+    label: "Имя *",
     placeholder: "Имя",
     type: "text",
   },
   {
     name: "lastname",
-    label: "Фамилия",
+    label: "Фамилия *",
     placeholder: "Фамилия",
     type: "text",
   },
   {
+    name: "password",
+    label: "Пароль *",
+    placeholder: "Пароль",
+    type: "password",
+  },
+  {
+    name: "changepassword",
+    label: "Подтверждение пароля *",
+    placeholder: "Подтверждение пароля",
+    type: "password",
+  },
+  {
     name: "email",
-    label: "Email",
+    label: "Email *",
     placeholder: "Email",
     type: "email",
   },
@@ -51,17 +63,5 @@ export const registrationFormFieldsData = [
     label: "Школа",
     placeholder: "Школа",
     type: "text",
-  },
-  {
-    name: "password",
-    label: "Пароль",
-    placeholder: "Пароль",
-    type: "password",
-  },
-  {
-    name: "changepassword",
-    label: "Подтверждение пароля",
-    placeholder: "Подтверждение пароля",
-    type: "password",
   },
 ] as const;
