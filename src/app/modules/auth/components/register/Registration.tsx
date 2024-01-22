@@ -49,7 +49,7 @@ export function Registration() {
         iconUrl="media/svg/general/smartphone.svg"
         props={{ back: { onClick: () => setStep(0) } }}
       >
-        <EmailVerification />
+        <EmailVerification user={user} onSuccess={handleCurrentUser} />
       </AuthContentBlockLayout>
     );
   }

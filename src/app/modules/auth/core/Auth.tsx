@@ -20,6 +20,7 @@ type AuthContextProps = {
   currentUser: UserModel | undefined;
   setCurrentUser: Dispatch<SetStateAction<UserModel | undefined>>;
   logout: () => void;
+  getAuth: () => AuthModel | undefined;
 };
 
 const initAuthContextPropsState = {
@@ -28,6 +29,7 @@ const initAuthContextPropsState = {
   currentUser: undefined,
   setCurrentUser: () => {},
   logout: () => {},
+  getAuth: () => undefined,
 };
 
 const AuthContext = createContext<AuthContextProps>(initAuthContextPropsState);
@@ -48,6 +50,8 @@ const AuthProvider: FC<WithChildren> = ({ children }) => {
     }
   };
 
+  const getAuth = () => authHelper.getAuth();
+
   const logout = () => {
     saveAuth(undefined);
     setCurrentUser(undefined);
@@ -55,7 +59,7 @@ const AuthProvider: FC<WithChildren> = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ auth, saveAuth, currentUser, setCurrentUser, logout }}
+      value={{ auth, saveAuth, currentUser, setCurrentUser, logout, getAuth }}
     >
       {children}
     </AuthContext.Provider>

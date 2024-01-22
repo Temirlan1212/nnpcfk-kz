@@ -7,6 +7,7 @@ export const GET_USER_BY_ACCESSTOKEN_URL = `${API_URL}/verify_token`;
 export const LOGIN_URL = `${API_URL}/login`;
 export const REGISTER_URL = `${API_URL}/register`;
 export const REQUEST_PASSWORD_URL = `${API_URL}/forgot_password`;
+export const EMAIL_VERIFY = `${API_URL}/email/verify`;
 
 // Server should return AuthModel
 export function login(email: string, password: string) {
@@ -45,4 +46,12 @@ export function getUserByToken(token: string) {
   let config: any = {};
   config.headers = { Authorization: `Bearer ${token}` };
   return axios.post<UserModel>(GET_USER_BY_ACCESSTOKEN_URL, body, config);
+}
+
+export function emailVerify(token: string, otp: string) {
+  let body: any = {};
+  let config: any = {};
+  config.headers = { Authorization: `Bearer ${token}` };
+  body.code = otp;
+  return axios.post<UserModel>(EMAIL_VERIFY, body, config);
 }

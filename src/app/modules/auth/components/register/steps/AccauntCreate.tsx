@@ -81,6 +81,9 @@ export function AccauntCreate() {
                         !formik?.errors[field.name],
                     }
                   )}
+                  onKeyDown={(event) => {
+                    if (event.code === "Enter") handleNext(item.fieldNames);
+                  }}
                 />
                 {formik?.touched[field.name] && formik?.errors[field.name] && (
                   <div className="fv-plugins-message-container">
