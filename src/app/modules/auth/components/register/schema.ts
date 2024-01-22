@@ -1,4 +1,6 @@
-import { string, ref, bool, object } from "yup";
+import { string, ref, bool, object, InferType } from "yup";
+
+export type IRegistrationFormSchema = InferType<typeof registrationFormSchema>;
 
 export const registrationFormSchema = object().shape({
   firstname: string()
@@ -41,6 +43,12 @@ export const registrationFormFieldsData = [
     type: "text",
   },
   {
+    name: "email",
+    label: "Email *",
+    placeholder: "Email",
+    type: "email",
+  },
+  {
     name: "password",
     label: "Пароль *",
     placeholder: "Пароль",
@@ -53,15 +61,32 @@ export const registrationFormFieldsData = [
     type: "password",
   },
   {
-    name: "email",
-    label: "Email *",
-    placeholder: "Email",
-    type: "email",
-  },
-  {
     name: "school",
     label: "Школа",
     placeholder: "Школа",
     type: "text",
+  },
+] as const;
+
+const registrationFormSteps = {
+  required: [registrationFormFieldsData[0], registrationFormFieldsData[1]],
+  optional: [
+    registrationFormFieldsData[2],
+    registrationFormFieldsData[3],
+    registrationFormFieldsData[4],
+    registrationFormFieldsData[5],
+  ],
+};
+
+export const registrationFormStepsData = [
+  {
+    title: "",
+    schema: registrationFormSteps["required"],
+    fieldNames: registrationFormSteps["required"].map((field) => field.name),
+  },
+  {
+    title: "",
+    schema: registrationFormSteps["optional"],
+    fieldNames: registrationFormSteps["optional"].map((field) => field.name),
   },
 ] as const;

@@ -3,13 +3,15 @@ import { AuthContentBlockLayout } from "../../AuthContentBlockLayout";
 import { AccauntCreate } from "./steps/AccauntCreate";
 import { useAuth } from "../../core/Auth";
 import { getUserByToken } from "../../core/_requests";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { EmailVerification } from "./steps/EmailVerification";
+import { useRegistrationForm } from "./core/RegistrationForm";
 
 export function Registration() {
   const [step, setStep] = useState(0);
   const [user, setUser] = useState<AuthModel>();
   const { saveAuth, setCurrentUser } = useAuth();
+  const { user: registrationFormUser } = useRegistrationForm();
 
   const onAccauntCreate = async (auth: AuthModel) => {
     setUser(auth);
@@ -24,13 +26,17 @@ export function Registration() {
     }
   };
 
+  useEffect(() => {
+    if (registrationFormUser != null) onAccauntCreate(registrationFormUser);
+  }, [registrationFormUser]);
+
   if (step === 0) {
     return (
       <AuthContentBlockLayout
         title="Создать аккаунт"
         description="Для доступа на платформу"
       >
-        <AccauntCreate onSubmit={onAccauntCreate} />
+        <AccauntCreate />
       </AuthContentBlockLayout>
     );
   }

@@ -3,6 +3,7 @@ import { Registration } from "./components/register/Registration";
 import { ForgotPassword } from "./components/ForgotPassword";
 import { Login } from "./components/Login";
 import { AuthLayout } from "./AuthLayout";
+import { RegistrationFormProvider } from "./components/register/core/RegistrationForm";
 
 const AuthPage = () => (
   <Routes>
@@ -14,7 +15,9 @@ const AuthPage = () => (
         // title="Создать аккаунт"
         // description="Для доступа на платформу"
         >
-          <Registration />
+          <RegistrationFormProvider>
+            <Registration />
+          </RegistrationFormProvider>
         </AuthLayout>
       }
     />
