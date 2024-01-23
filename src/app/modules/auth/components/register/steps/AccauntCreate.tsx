@@ -98,16 +98,6 @@ export function AccauntCreate() {
                 step === 0 ? "justify-content-end" : "justify-content-between"
               )}
             >
-              {registrationFormStepsData.length - 1 !== index && step !== 0 && (
-                <button
-                  onClick={handlePrevious}
-                  type="submit"
-                  id="kt_sign_up_submit"
-                  className="btn btn-lg btn-secondary w-100 mb-5"
-                >
-                  <span className="indicator-label">Назад</span>
-                </button>
-              )}
               {registrationFormStepsData.length - 1 !== index && (
                 <button
                   onClick={() => handleNext(item.fieldNames)}
@@ -163,14 +153,6 @@ export function AccauntCreate() {
           {/* begin::Form group */}
           <div className="d-flex text-center gap-5">
             <button
-              onClick={handlePrevious}
-              type="submit"
-              id="kt_sign_up_submit"
-              className="btn btn-lg btn-secondary w-100 mb-5"
-            >
-              <span className="indicator-label">Назад</span>
-            </button>
-            <button
               type="submit"
               id="kt_sign_up_submit"
               className="btn btn-lg btn-primary w-100 mb-5"
@@ -191,15 +173,15 @@ export function AccauntCreate() {
               )}
             </button>
           </div>
-
-          <div className="text-gray-500  text-center">
-            Уже есть аккаунт?
-            <Link to="/auth/login">
-              <span className="ms-1 link-primary">Войти</span>
-            </Link>
-          </div>
         </>
       )}
+
+      <div className="text-gray-500  text-center">
+        Уже есть аккаунт?
+        <Link to="/auth/login">
+          <span className="ms-1 link-primary">Войти</span>
+        </Link>
+      </div>
 
       {/* end::Form group */}
     </form>
