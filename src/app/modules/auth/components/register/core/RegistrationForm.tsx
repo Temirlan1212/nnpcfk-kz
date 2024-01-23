@@ -8,7 +8,7 @@ import {
   Dispatch,
   SetStateAction,
 } from "react";
-import { registrationFormSchema } from "../schema";
+import { registrationFormSchema } from "./schema";
 import { WithChildren } from "../../../../../../_metronic/helpers";
 import { register } from "../../../core/_requests";
 import { AuthModel } from "../../../core/_models";

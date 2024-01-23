@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import clsx from "clsx";
 import { Link } from "react-router-dom";
 import { PasswordMeterComponent } from "../../../../../../_metronic/assets/ts/components";
-import { IRegistrationFormSchema, registrationFormStepsData } from "../schema";
+
 import { Button, ProgressBar } from "react-bootstrap";
 import { validateFields } from "../../../../../helpers/formik";
 import { useRegistrationForm } from "../core/RegistrationForm";
+import { IRegistrationFormSchema } from "../core/schema";
+import { registrationFormStepsData } from "../core/form-fields.data";
 
 const initialValues = {
   school: "",
