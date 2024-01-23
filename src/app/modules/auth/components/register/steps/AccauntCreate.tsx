@@ -92,24 +92,31 @@ export function AccauntCreate() {
                 )}
               </div>
             ))}
-            <div className="d-flex justify-content-between my-5">
-              {registrationFormStepsData.length - 1 !== index && (
-                <Button
-                  variant="secondary"
-                  disabled={step < 1}
+            <div
+              className={clsx(
+                "d-flex my-5 gap-3",
+                step === 0 ? "justify-content-end" : "justify-content-between"
+              )}
+            >
+              {registrationFormStepsData.length - 1 !== index && step !== 0 && (
+                <button
                   onClick={handlePrevious}
+                  type="submit"
+                  id="kt_sign_up_submit"
+                  className="btn btn-lg btn-secondary w-100 mb-5"
                 >
-                  Назад
-                </Button>
+                  <span className="indicator-label">Назад</span>
+                </button>
               )}
               {registrationFormStepsData.length - 1 !== index && (
-                <Button
-                  type="button"
-                  variant="primary"
+                <button
                   onClick={() => handleNext(item.fieldNames)}
+                  type="submit"
+                  id="kt_sign_up_submit"
+                  className="btn btn-lg btn-primary w-100 mb-5"
                 >
-                  Вперед
-                </Button>
+                  <span className="indicator-label">Дальше</span>
+                </button>
               )}
             </div>
           </div>
@@ -179,7 +186,6 @@ export function AccauntCreate() {
                   className="indicator-progress"
                   style={{ display: "block" }}
                 >
-                  Подождите...{" "}
                   <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
                 </span>
               )}
