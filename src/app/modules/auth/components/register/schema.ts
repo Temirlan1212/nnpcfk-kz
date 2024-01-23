@@ -21,7 +21,7 @@ export const registrationFormSchema = object().shape({
     .min(3, "Минимум 3 символа")
     .max(50, "Максимум 50 символов")
     .required("Это обязательное поле"),
-  changepassword: string()
+  password_confirmation: string()
     .min(3, "Минимум 3 символа")
     .max(50, "Максимум 50 символов")
     .required("Это обязательное поле")
@@ -32,39 +32,45 @@ export const registrationFormSchema = object().shape({
 export const registrationFormFieldsData = [
   {
     name: "firstname",
-    label: "Имя *",
+    label: "Имя",
     placeholder: "Имя",
     type: "text",
+    required: true,
   },
   {
     name: "lastname",
-    label: "Фамилия *",
+    label: "Фамилия",
     placeholder: "Фамилия",
     type: "text",
+    required: true,
   },
   {
     name: "email",
-    label: "Email *",
+    label: "Email",
     placeholder: "Email",
     type: "email",
+    required: true,
   },
   {
     name: "password",
-    label: "Пароль *",
+    label: "Пароль",
     placeholder: "Пароль",
     type: "password",
+    required: true,
   },
   {
-    name: "changepassword",
-    label: "Подтверждение пароля *",
+    name: "password_confirmation",
+    label: "Подтверждение пароля",
     placeholder: "Подтверждение пароля",
     type: "password",
+    required: true,
   },
   {
     name: "school",
     label: "Школа",
     placeholder: "Школа",
     type: "text",
+    required: false,
   },
 ] as const;
 

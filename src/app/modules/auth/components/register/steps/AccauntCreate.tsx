@@ -13,7 +13,7 @@ const initialValues = {
   lastname: "",
   email: "",
   password: "",
-  changepassword: "",
+  password_confirmation: "",
   acceptTerms: false,
 };
 
@@ -56,39 +56,35 @@ export function AccauntCreate() {
       {registrationFormStepsData.map((item, index) =>
         step === index ? (
           <div key={index}>
-            {item.schema.map((field) => (
-              <div key={field.name} className="fv-row mb-8">
+            {item.schema.map(({ label, name, placeholder, type, required }) => (
+              <div key={name} className="fv-row mb-8">
                 <label className="form-label fw-bolder text-gray-900 fs-6">
-                  {field.label}
+                  {label} {!!required && <span className="text-danger">*</span>}
                 </label>
                 <input
-                  placeholder={field.placeholder}
-                  type={field.type}
+                  placeholder={placeholder}
+                  type={type}
                   autoComplete="off"
-                  {...formik?.getFieldProps(
-                    field.name as keyof typeof initialValues
-                  )}
+                  {...formik?.getFieldProps(name as keyof typeof initialValues)}
                   className={clsx(
                     "form-control bg-transparent",
                     {
                       "is-invalid":
-                        formik?.touched[field.name] &&
-                        formik?.errors[field.name],
+                        formik?.touched[name] && formik?.errors[name],
                     },
                     {
                       "is-valid":
-                        formik?.touched[field.name] &&
-                        !formik?.errors[field.name],
+                        formik?.touched[name] && !formik?.errors[name],
                     }
                   )}
                   onKeyDown={(event) => {
                     if (event.code === "Enter") handleNext(item.fieldNames);
                   }}
                 />
-                {formik?.touched[field.name] && formik?.errors[field.name] && (
+                {formik?.touched[name] && formik?.errors[name] && (
                   <div className="fv-plugins-message-container">
                     <div className="fv-help-block">
-                      <span role="alert">{formik?.errors[field.name]}</span>
+                      <span role="alert">{formik?.errors[name]}</span>
                     </div>
                   </div>
                 )}

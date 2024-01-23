@@ -21,7 +21,7 @@ const initailFormValues = {
   lastname: "",
   email: "",
   password: "",
-  changepassword: "",
+  password_confirmation: "",
   acceptTerms: false,
 };
 
@@ -59,7 +59,7 @@ const RegistrationFormProvider: FC<WithChildren> = ({ children }) => {
           values.firstname,
           values.lastname,
           values.password,
-          values.changepassword
+          values.password_confirmation
         );
         setUser(auth.user);
         setLoading(false);
