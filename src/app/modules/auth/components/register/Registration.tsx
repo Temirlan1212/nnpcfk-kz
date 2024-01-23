@@ -39,6 +39,7 @@ export function Registration() {
         props={{ back: { onClick: () => navigate(-1) } }}
         title="Создать аккаунт"
         description="Для доступа на платформу"
+        iconUrl="media/svg/general/password-recovery-vector.svg"
       >
         <AccauntCreate />
       </AuthContentBlockLayout>
