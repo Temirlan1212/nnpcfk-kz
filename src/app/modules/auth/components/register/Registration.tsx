@@ -14,7 +14,11 @@ export function Registration() {
   const navigate = useNavigate();
   const { saveAuth, setCurrentUser } = useAuth();
 
-  const { user: registrationFormUser } = useRegistrationForm();
+  const {
+    user: registrationFormUser,
+    step: accauntCreateStep,
+    setStep: setAccauntCreateStep,
+  } = useRegistrationForm();
 
   const onAccauntCreate = async (auth: AuthModel) => {
     setUser(auth);
@@ -36,10 +40,17 @@ export function Registration() {
   if (step === 0) {
     return (
       <AuthContentBlockLayout
-        props={{ back: { onClick: () => navigate(-1) } }}
+        props={{
+          back: {
+            onClick: () =>
+              accauntCreateStep === 0
+                ? navigate(-1)
+                : setAccauntCreateStep &&
+                  setAccauntCreateStep((prev) => prev - 1),
+          },
+        }}
         title="Создать аккаунт"
         description="Для доступа на платформу"
-        iconUrl="media/svg/general/password-recovery-vector.svg"
       >
         <AccauntCreate />
       </AuthContentBlockLayout>
