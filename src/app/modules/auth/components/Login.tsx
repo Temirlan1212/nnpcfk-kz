@@ -60,7 +60,7 @@ export function Login() {
 
   return (
     <div
-      className="d-flex justify-content-center min-vh-100"
+      className="d-flex justify-content-center min-vh-100 p-5"
       style={{
         backgroundImage: `url(${toAbsoluteUrl("media/auth/login-bg.png")})`,
         backgroundSize: "cover", // Add this for better coverage
@@ -92,7 +92,6 @@ export function Login() {
         <div
           style={{
             padding: "40px 60px",
-            width: "450px",
             borderRadius: "16px",
             boxShadow: "0px 0px 40px 0px rgba(94, 107, 141, 0.08)",
             backgroundColor: "#fff",
@@ -187,7 +186,6 @@ export function Login() {
                   className="indicator-progress"
                   style={{ display: "block" }}
                 >
-                  Please wait...
                   <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
                 </span>
               )}
