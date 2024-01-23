@@ -60,7 +60,7 @@ export function Login() {
 
   return (
     <div
-      className="d-flex justify-content-center min-vh-100 p-5"
+      className="d-flex justify-content-center min-vh-100 p-"
       style={{
         backgroundImage: `url(${toAbsoluteUrl("media/auth/login-bg.png")})`,
         backgroundSize: "cover", // Add this for better coverage
@@ -90,114 +90,122 @@ export function Login() {
           </h3>
         </div>
         <div
+          className="d-flex justify-content-center"
           style={{
-            padding: "40px 60px",
-            borderRadius: "16px",
-            boxShadow: "0px 0px 40px 0px rgba(94, 107, 141, 0.08)",
-            backgroundColor: "#fff",
+            width: "450px",
           }}
         >
-          {/* begin::Heading */}
-          <div className="text-center mb-11">
-            <h1 className="text-gray-900 fw-bolder mb-3">Вход в аккаунт</h1>
-            <div className="text-gray-500 fw-semibold fs-6">
-              Введите ваши данные
+          <div
+            className="w-75 w-sm-100"
+            style={{
+              padding: "40px 60px",
+              borderRadius: "16px",
+              boxShadow: "0px 0px 40px 0px rgba(94, 107, 141, 0.08)",
+              backgroundColor: "#fff",
+            }}
+          >
+            {/* begin::Heading */}
+            <div className="text-center mb-11">
+              <h1 className="text-gray-900 fw-bolder mb-3">Вход в аккаунт</h1>
+              <div className="text-gray-500 fw-semibold fs-6">
+                Введите ваши данные
+              </div>
             </div>
-          </div>
-          {/* begin::Heading */}
+            {/* begin::Heading */}
 
-          {/* begin::Form group */}
-          <div className="fv-row mb-8">
-            <input
-              placeholder="Телефон"
-              {...formik.getFieldProps("email")}
-              className={clsx(
-                "form-control bg-transparent",
-                { "is-invalid": formik.touched.email && formik.errors.email },
-                {
-                  "is-valid": formik.touched.email && !formik.errors.email,
-                }
+            {/* begin::Form group */}
+            <div className="fv-row mb-8">
+              <input
+                placeholder="Телефон"
+                {...formik.getFieldProps("email")}
+                className={clsx(
+                  "form-control bg-transparent",
+                  { "is-invalid": formik.touched.email && formik.errors.email },
+                  {
+                    "is-valid": formik.touched.email && !formik.errors.email,
+                  }
+                )}
+                type="email"
+                name="email"
+                autoComplete="off"
+              />
+              {formik.touched.email && formik.errors.email && (
+                <div className="fv-plugins-message-container">
+                  <div className="fv-help-block">
+                    <span role="alert font-color-error">
+                      Требуется номер телефона
+                    </span>
+                  </div>
+                </div>
               )}
-              type="email"
-              name="email"
-              autoComplete="off"
-            />
-            {formik.touched.email && formik.errors.email && (
-              <div className="fv-plugins-message-container">
-                <div className="fv-help-block">
-                  <span role="alert font-color-error">
-                    Требуется номер телефона
+            </div>
+            {/* end::Form group */}
+
+            {/* begin::Form group */}
+            <div className="fv-row mb-3">
+              <input
+                type="password"
+                autoComplete="off"
+                {...formik.getFieldProps("password")}
+                placeholder="Пароль"
+                className={clsx(
+                  "form-control bg-transparent",
+                  {
+                    "is-invalid":
+                      formik.touched.password && formik.errors.password,
+                  },
+                  {
+                    "is-valid":
+                      formik.touched.password && !formik.errors.password,
+                  }
+                )}
+              />
+              {formik.touched.password && formik.errors.password && (
+                <div className="fv-plugins-message-container">
+                  <div className="fv-help-block">
+                    <span role="alert font-color-error">Требуется пароль</span>
+                  </div>
+                </div>
+              )}
+            </div>
+            {/* end::Form group */}
+
+            {/* begin::Wrapper */}
+            <div className="text-gray-500 mb-5">
+              Забыли пароль?
+              <Link to="/auth/forgot-password">
+                <span className="ms-1 link-primary">Восстановить</span>
+              </Link>
+            </div>
+            {/* end::Wrapper */}
+
+            {/* begin::Action */}
+            <div className="d-grid mb-10">
+              <button
+                type="submit"
+                id="kt_sign_in_submit"
+                className="btn btn-primary"
+                disabled={formik.isSubmitting || !formik.isValid}
+              >
+                {!loading && <span className="indicator-label">Вход</span>}
+                {loading && (
+                  <span
+                    className="indicator-progress"
+                    style={{ display: "block" }}
+                  >
+                    <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
                   </span>
-                </div>
-              </div>
-            )}
-          </div>
-          {/* end::Form group */}
+                )}
+              </button>
+            </div>
+            {/* end::Action */}
 
-          {/* begin::Form group */}
-          <div className="fv-row mb-3">
-            <input
-              type="password"
-              autoComplete="off"
-              {...formik.getFieldProps("password")}
-              placeholder="Пароль"
-              className={clsx(
-                "form-control bg-transparent",
-                {
-                  "is-invalid":
-                    formik.touched.password && formik.errors.password,
-                },
-                {
-                  "is-valid":
-                    formik.touched.password && !formik.errors.password,
-                }
-              )}
-            />
-            {formik.touched.password && formik.errors.password && (
-              <div className="fv-plugins-message-container">
-                <div className="fv-help-block">
-                  <span role="alert font-color-error">Требуется пароль</span>
-                </div>
-              </div>
-            )}
-          </div>
-          {/* end::Form group */}
-
-          {/* begin::Wrapper */}
-          <div className="text-gray-500 mb-5">
-            Забыли пароль?
-            <Link to="/auth/forgot-password">
-              <span className="ms-1 link-primary">Восстановить</span>
-            </Link>
-          </div>
-          {/* end::Wrapper */}
-
-          {/* begin::Action */}
-          <div className="d-grid mb-10">
-            <button
-              type="submit"
-              id="kt_sign_in_submit"
-              className="btn btn-primary"
-              disabled={formik.isSubmitting || !formik.isValid}
-            >
-              {!loading && <span className="indicator-label">Вход</span>}
-              {loading && (
-                <span
-                  className="indicator-progress"
-                  style={{ display: "block" }}
-                >
-                  <span className="spinner-border spinner-border-sm align-middle ms-2"></span>
-                </span>
-              )}
-            </button>
-          </div>
-          {/* end::Action */}
-
-          <div className="text-gray-500  text-center">
-            Еще нет аккаунта?
-            <Link to="/auth/registration">
-              <span className="ms-1 link-primary">Зарегистрироваться</span>
-            </Link>
+            <div className="text-gray-500  text-center">
+              Еще нет аккаунта?
+              <Link to="/auth/registration">
+                <span className="ms-1 link-primary">Зарегистрироваться</span>
+              </Link>
+            </div>
           </div>
         </div>
       </form>
