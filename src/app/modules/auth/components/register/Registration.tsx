@@ -6,11 +6,14 @@ import { getUserByToken } from "../../core/_requests";
 import { useEffect, useState } from "react";
 import { EmailVerification } from "./steps/EmailVerification";
 import { useRegistrationForm } from "./core/RegistrationForm";
+import { useNavigate } from "react-router-dom";
 
 export function Registration() {
   const [step, setStep] = useState(0);
   const [user, setUser] = useState<AuthModel>();
+  const navigate = useNavigate();
   const { saveAuth, setCurrentUser } = useAuth();
+
   const { user: registrationFormUser } = useRegistrationForm();
 
   const onAccauntCreate = async (auth: AuthModel) => {
@@ -33,6 +36,7 @@ export function Registration() {
   if (step === 0) {
     return (
       <AuthContentBlockLayout
+        props={{ back: { onClick: () => navigate(-1) } }}
         title="Создать аккаунт"
         description="Для доступа на платформу"
       >
